@@ -7,77 +7,78 @@
 
 # Scientific Contradiction Detection System
 
-**Automated detection of conflicting findings in scientific literature.**
+**An automated disagreement detector for the scientific record.**
 
-This system scans hundreds of papers in a target domain, extracts structured claims, and surfaces where different papers reach opposing conclusions. It produces a **Contradiction Map** — a structured dataset of who disagrees with whom, about what, and why.
-
-It is not a literature review tool. It is not a summarizer. It is a **disagreement detector** for the scientific record.
+It is not a literature review tool. It is not a summarizer. It scans hundreds of papers in a target domain, extracts structured claims, and surfaces where different papers reach opposing conclusions — producing a **Contradiction Map**: who disagrees with whom, about what, and why.
 
 ---
 
-## The Problem
+## The Problem: Academia's Blind Spot
 
-Academia produces far more papers than any researcher can read. In just five years (2021–2026), a narrow subfield like Chain-of-Thought mathematical reasoning accumulated ~200 papers. Conflicting conclusions are published in different venues, never cross-referenced. Researchers build on inconsistent foundations without knowing it.
+A narrow subfield like Chain-of-Thought mathematical reasoning produced ~200 papers between 2021 and 2026. No researcher can read them all. Conflicting conclusions are published in different venues and never cross-referenced. Researchers build on inconsistent foundations without knowing it.
 
-The result is **Condition Drift**: papers use identical claim wording ("Chain-of-Thought improves accuracy") while testing on GPT-3.5 vs Llama-2 vs GPT-4, GSM8K vs MATH vs SVAMP — making the literature appear to agree when their experiments don't actually compare.
-
----
-
-## Key Finding
-
-In our production run, **76% of detected contradictions were not scientific disagreements** — they were Condition Drift. Only 24% were genuine logical contradictions between papers. This systematic inconsistency had not been previously documented at scale.
-
-| Type | Count | Meaning |
-|------|-------|---------|
-| Experimental Condition | 126 (76%) | Same claim wording, different experimental setups |
-| Logical Contradiction | 39 (24%) | Claims directly contradict each other |
+The system makes disagreement **measurable, structured, and queryable**.
 
 ---
 
-## Pipeline
+## How It Works: Four-Phase Pipeline
 
 ```
-200 papers
-  │
-  ▼ arXiv + Semantic Scholar
-  ▼ PyMuPDF text extraction (Results/Discussion/Conclusion)
-  │
-  ▼ DeepSeek API / Llama 3 8B 4-bit
-  ▼ 6-tuple claims: subject | relation | object | condition | evidence | confidence
-  ▼ DataCleaner: ontology normalization + synonym mapping + confidence validation
-  │
-  ▼ 192 structured claims
-  ▼ Candidate generation (same SRO + opposite relations)
-  ▼ Rule engine (4 patterns) + LLM fallback classification
-  ▼ Significance scoring: 0.6·log(citations) + 0.4·confidence
-  │
-  ▼ 165 verified contradictions
-  ▼ Streamlit dashboard + LaTeX paper + manual verification
+┌──────────────────────────────────────────────────────────┐
+│  1. DATA COLLECTION                                       │
+│  arXiv + Semantic Scholar → 200 papers                   │
+│  Rate-limited PDF download → PyMuPDF text extraction     │
+│  (Results / Discussion / Conclusion sections only)        │
+└───────────────────────┬──────────────────────────────────┘
+                        │
+                        ▼
+┌──────────────────────────────────────────────────────────┐
+│  2. CLAIM EXTRACTION                                      │
+│  DeepSeek API / Llama 3 8B 4-bit                         │
+│  → 6-tuple: subject | relation | object | condition      │
+│              | evidence_type | confidence                 │
+│  → DataCleaner: ontology normalization + synonym mapping  │
+│  → 192 structured claims from 39 papers                  │
+└───────────────────────┬──────────────────────────────────┘
+                        │
+                        ▼
+┌──────────────────────────────────────────────────────────┐
+│  3. CONTRADICTION DETECTION                               │
+│                                                           │
+│  Strategy 1: Same (subject, relation, object)             │
+│    → Papers claim the same thing but conditions differ    │
+│    → Experimental_Condition_Contradiction                 │
+│                                                           │
+│  Strategy 2: Same (subject, object), opposite relations   │
+│    → "X improves Y" vs "X degrades Y"                    │
+│    → Scientific_Dispute / Logical_Contradiction           │
+│                                                           │
+│  Classification: Rule engine (4 patterns) + LLM fallback  │
+│  Significance: 0.6·log(citations) + 0.4·confidence(×10)  │
+│  → 173 candidate pairs → 165 verified contradictions     │
+└───────────────────────┬──────────────────────────────────┘
+                        │
+                        ▼
+┌──────────────────────────────────────────────────────────┐
+│  4. OUTPUT & INTERFACE                                    │
+│  Streamlit dashboard (browse, filter, visualize)          │
+│  LaTeX research paper (auto-generated)                   │
+│  Manual verification CSV (top 100 sampled)               │
+│  Rule engine from verified patterns                      │
+└──────────────────────────────────────────────────────────┘
 ```
 
-### Claim Format
+### Core Data Structure
 
-Every claim in the system is a strict 6-tuple:
+Every claim is a strict 6-tuple. Contradictions are pairs of tuples from different papers.
 
 | subject | relation | object | condition | evidence | confidence |
 |---------|----------|--------|-----------|----------|------------|
 | Chain-of-Thought | improves | Arithmetic Accuracy | GSM8K, GPT-3.5 | Experimental_Result | 5 |
 
-Contradictions are pairs of these tuples from different papers, classified by type and ranked by significance.
-
-### Detection Strategies
-
-Two complementary strategies find contradiction candidates:
-
-**Strategy 1 — Same (subject, relation, object):** When two papers make the same claim but the claim is sensitive to experimental conditions (different models, datasets, parameters). These produce `Experimental_Condition_Contradiction`.
-
-**Strategy 2 — Same (subject, object), opposite relations:** When one paper says "X improves Y" and another says "X degrades Y." These produce `Scientific_Dispute` or `Logical_Contradiction`.
-
-A rule engine with 4 detection patterns handles confident cases; an LLM serves as fallback for the rest. Every contradiction gets a significance score: `0.6 × log(avg_citations) + 0.4 × avg_confidence`.
-
 ---
 
-## Results
+## What We Found
 
 | Metric | Value |
 |--------|-------|
@@ -86,15 +87,22 @@ A rule engine with 4 detection patterns handles confident cases; an LLM serves a
 | Structured claims extracted | 192 |
 | Candidate contradiction pairs | 173 |
 | **Verified contradictions** | **165** |
-| Papers involved in contradictions | ~52 |
+| Papers involved | ~52 |
 
-### Web Interface
+**165 contradictions, but only 24% are genuine scientific disputes.** The rest reveal a structural problem in the literature:
 
-![Contradiction Detection Dashboard](screenshots/homepage.png)
+| Contradiction Type | Count | Meaning |
+|-------------------|-------|---------|
+| Experimental Condition | 126 (76%) | Same claim wording, different experimental setups |
+| Logical Contradiction | 39 (24%) | Claims directly contradict each other |
 
-### Contradiction Network
+This is **Condition Drift**: papers state "Chain-of-Thought improves arithmetic accuracy" while testing on GPT-3.5 vs Llama-2 vs GPT-4, GSM8K vs MATH vs SVAMP. The literature *appears* to agree but their experiments don't actually compare. This systematic inconsistency had not been previously documented at scale.
 
-![Contradiction Network](screenshots/contradiction_network.png)
+### Screenshots
+
+| Statistics Dashboard | Contradiction Network |
+|---------------------|----------------------|
+| ![Dashboard](screenshots/homepage.png) | ![Network](screenshots/contradiction_network.png) |
 
 ---
 
@@ -104,7 +112,7 @@ A rule engine with 4 detection patterns handles confident cases; an LLM serves a
 # Install
 pip install -r requirements.txt
 
-# Set your DeepSeek API key (choose one)
+# Set your DeepSeek API key
 set DEEPSEEK_API_KEY=sk-your-key-here          # Windows CMD
 $env:DEEPSEEK_API_KEY = "sk-your-key-here"     # PowerShell
 export DEEPSEEK_API_KEY=sk-your-key-here       # Linux/macOS
@@ -114,7 +122,7 @@ python src/main.py --phase all
 
 # Or step by step
 python src/main.py --phase 1          # Data collection
-python src/main.py --phase 2 --mock   # Claim extraction (test with mock)
+python src/main.py --phase 2 --mock   # Claim extraction (test)
 python src/main.py --phase 3          # Contradiction detection
 python src/main.py --phase 4          # Paper generation
 
@@ -125,59 +133,56 @@ streamlit run src/app.py
 ### Individual Phase Scripts
 
 ```bash
-python scripts/run_phase2.py          # Claim extraction via DeepSeek API
+python scripts/run_phase2.py          # Claim extraction via API
 python scripts/run_phase2_batch.py    # Batch extraction (50 papers)
 python scripts/run_phase3.py          # Contradiction detection
-python scripts/run_phase3_final.py    # Final classification + paper gen
+python scripts/run_phase3_final.py    # Final classification + paper
 python scripts/run_phase4.py          # Paper generation only
-python scripts/quick_test.py          # Quick 10-paper test
+python scripts/quick_test.py          # 10-paper test run
 ```
 
 ---
 
-## Repository Structure
+## Architecture Deep Dive
 
-```
-src/                          # Core pipeline modules
-├── ontology.py               # Domain concepts, relations, synonym maps
-├── paper_fetcher.py          # arXiv + Semantic Scholar data acquisition
-├── pdf_downloader.py         # Rate-limited PDF download
-├── text_extractor.py         # PyMuPDF text extraction
-├── claim_extractor.py        # 6-tuple extraction (DeepSeek/Llama 3)
-├── data_cleaner.py           # Ontology normalization + validation
-├── batch_processor.py        # Extraction pipeline orchestrator
-├── contradiction_detector.py # Candidate generation + classification
-├── rule_engine.py            # 4 rule-based detection patterns
-├── llm_client.py             # DeepSeek API client
-├── paper_generator.py        # LaTeX paper generation
-├── app.py                    # Streamlit web interface
-└── main.py                   # CLI entry point
+### Modules
 
-scripts/                      # Run scripts
-├── run_full_pipeline.py      # Full pipeline
-├── run_phase2.py / _batch.py # Claim extraction
-├── run_phase3.py / _final.py # Contradiction detection
-├── run_phase4.py             # Paper generation
-├── fetch_relevant_papers.py  # Paper fetching
-├── process_relevant_papers.py# PDF processing
-├── check_and_clean.py        # Data cleaning
-└── quick_test.py             # 10-paper test
+| Layer | Module | Responsibility |
+|-------|--------|----------------|
+| **Data** | `paper_fetcher.py` | arXiv + Semantic Scholar metadata retrieval |
+| | `pdf_downloader.py` | Rate-limited PDF download (15s interval) |
+| | `text_extractor.py` | PyMuPDF text from Results/Discussion/Conclusion |
+| **Extraction** | `claim_extractor.py` | 6-tuple extraction via LLM (DeepSeek or Llama 3) |
+| | `data_cleaner.py` | Ontology normalization, synonym mapping |
+| | `batch_processor.py` | Orchestrates extraction across all papers |
+| **Detection** | `contradiction_detector.py` | Candidate generation + classification + scoring |
+| | `rule_engine.py` | 4 rule patterns (opposite relations, dataset conflict, model comparison, statistical) |
+| | `llm_client.py` | DeepSeek API abstraction with retry logic |
+| **Output** | `paper_generator.py` | LaTeX paper auto-generation from results |
+| | `app.py` | Streamlit web interface (4 tabs) |
+| **CLI** | `main.py` | Phase orchestration (`--phase 1..4`) |
 
-tests/                        # Module tests
-data/                         # Datasets (CSV)
-screenshots/                  # Web interface screenshots
-papers/                       # LaTeX paper source + PDF
-templates/latex/              # LaTeX templates
-docs/                         # Documentation
+### Rule Engine (4 Patterns)
+
+The rule engine handles classification without LLM inference, achieving zero hallucination for matched cases:
+
+1. **Opposite relations** — Same subject/object, opposite relations → `Scientific_Dispute`
+2. **Dataset conflict** — Same claim text, different datasets → `Experimental_Condition_Contradiction`
+3. **Model comparison** — Same claim, different LLM models → `Experimental_Condition_Contradiction`
+4. **Statistical disagreement** — Numerical values differ by >10% → `Statistical_Error_Contradiction`
+
+### Significance Scoring
+
+```python
+significance = 0.6 * log1p(avg_citations) * 10 + 0.4 * avg_confidence * 10
 ```
 
----
+Uses log-scaled citations to prevent a single high-citation paper from dominating the ranking.
 
-## Configuration
-
-Edit `config.yaml` to customize the pipeline:
+### Configuration
 
 ```yaml
+# config.yaml
 data:
   search_query: "chain of thought mathematical reasoning"
   max_papers: 200
@@ -194,28 +199,15 @@ scoring:
 
 ---
 
-## Adapting to a New Domain
+## Adapting to a Different Domain
 
-This system is domain-agnostic. To apply it to a different scientific field:
+This system is domain-agnostic. To apply it to another scientific field:
 
-1. **Define ontology** — Edit `src/ontology.py`: replace `concepts`, `relations`, `synonym_map`
-2. **Set search query** — Update `config.yaml` → `data.search_query`
+1. **Define ontology** — `src/ontology.py`: replace `concepts`, `relations`, `synonym_map`
+2. **Set search query** — `config.yaml` → `data.search_query`
 3. **Run** — `python src/main.py --phase all`
 
-Required: a formalizable vocabulary (10± concepts, 10± relations) and a searchable corpus of 150–500 papers.
-
----
-
-## Methodology
-
-This project follows the Hassabis Alpha-series scaffold approach:
-
-1. **Narrow Domain** — Single formalized field (Chain-of-Thought math reasoning)
-2. **Scaffold Development** — LLM for prototype (Phases 1–3), rule engine gradually replacing it
-3. **Formal World Model** — Strict ontology validation before any AI processing
-4. **Open Science** — Code and data publicly released
-
-Non-goals: cross-domain analysis, paper quality evaluation, contradiction resolution, real-time monitoring, general extraction.
+Requirements: a formalizable vocabulary (~10 concepts, ~10 relations), a searchable corpus of 150–500 papers.
 
 ---
 
@@ -228,17 +220,23 @@ Non-goals: cross-domain analysis, paper quality evaluation, contradiction resolu
 | Contradiction detection | Human memory | Rule engine + LLM |
 | Impact weighting | Subjective | Citation × confidence |
 | Reproducibility | None | Dataset + code published |
-| Reusability | One-time | Re-runnable pipeline |
+| Reusability | One-time publication | Re-runnable pipeline |
 
 ---
 
 ## Roadmap
 
-- [x] Phase 1 — Data collection (ontology, fetch, download, extract)
-- [x] Phase 2 — Claim extraction (6-tuple, normalization, batch processing)
-- [x] Phase 3 — Contradiction detection (candidates, classification, scoring)
-- [x] Phase 4 — Output (Streamlit dashboard, LaTeX paper, manual verification)
-- [ ] Phase 5 — Intelligence layer (auto rule derivation, cross-domain, continuous monitoring)
+### Completed
+- [x] Data collection (ontology, fetch, PDF, text extraction)
+- [x] Claim extraction (6-tuple, normalization, batch)
+- [x] Contradiction detection (candidates, classification, scoring, rule engine)
+- [x] Output (Streamlit, LaTeX paper, manual verification)
+
+### Planned
+- [ ] Automated rule derivation from verified contradictions
+- [ ] Cross-domain expansion (swap ontology → new field)
+- [ ] Continuous arXiv monitoring
+- [ ] Rule engine coverage >90%
 
 ---
 
@@ -259,9 +257,9 @@ MIT License — Open source for academic and research use.
 
 ## Acknowledgments
 
-- Methodology: Hassabis Alpha-series (AlphaGo, AlphaFold)
+- Methodology: Hassabis Alpha-series scaffold approach (narrow domain → world model → open science)
 - LLM pipeline: Sakana AI Scientist
-- Domain: Chain-of-Thought mathematical reasoning literature
+- Domain expertise: Chain-of-Thought mathematical reasoning literature
 
 ---
 
