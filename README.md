@@ -25,46 +25,50 @@ The system makes disagreement **measurable, structured, and queryable**.
 
 ```
 ┌──────────────────────────────────────────────────────────┐
-│  1. DATA COLLECTION                                       │
-│  arXiv + Semantic Scholar → 200 papers                   │
-│  Rate-limited PDF download → PyMuPDF text extraction     │
-│  (Results / Discussion / Conclusion sections only)        │
+│                   1. DATA COLLECTION                      │
+│                                                          │
+│   arXiv API ──► paper metadata (200 papers)              │
+│   Semantic Scholar ──► citation counts                   │
+│   PDF download (15s rate limit)                          │
+│   PyMuPDF text extraction (Results/Discussion/Conclusion)│
 └───────────────────────┬──────────────────────────────────┘
                         │
                         ▼
 ┌──────────────────────────────────────────────────────────┐
-│  2. CLAIM EXTRACTION                                      │
-│  DeepSeek API / Llama 3 8B 4-bit                         │
-│  → 6-tuple: subject | relation | object | condition      │
-│              | evidence_type | confidence                 │
-│  → DataCleaner: ontology normalization + synonym mapping  │
-│  → 192 structured claims from 39 papers                  │
+│                   2. CLAIM EXTRACTION                     │
+│                                                          │
+│   DeepSeek API / Llama 3 8B 4-bit                        │
+│   ──► 6-tuple: <subject> | <relation> | <object>        │
+│                | <condition> | <evidence> | <confidence> │
+│                                                          │
+│   DataCleaner:                                           │
+│   ├── Ontology normalization (GPT-4 → Large Language Model)│
+│   ├── Synonym mapping (enhances → improves)               │
+│   └── Confidence validation (1-5 scale)                  │
 └───────────────────────┬──────────────────────────────────┘
                         │
                         ▼
 ┌──────────────────────────────────────────────────────────┐
-│  3. CONTRADICTION DETECTION                               │
-│                                                           │
-│  Strategy 1: Same (subject, relation, object)             │
-│    → Papers claim the same thing but conditions differ    │
-│    → Experimental_Condition_Contradiction                 │
-│                                                           │
-│  Strategy 2: Same (subject, object), opposite relations   │
-│    → "X improves Y" vs "X degrades Y"                    │
-│    → Scientific_Dispute / Logical_Contradiction           │
-│                                                           │
-│  Classification: Rule engine (4 patterns) + LLM fallback  │
-│  Significance: 0.6·log(citations) + 0.4·confidence(×10)  │
-│  → 173 candidate pairs → 165 verified contradictions     │
+│                   3. CONTRADICTION DETECTION               │
+│                                                          │
+│   Strategy 1: Same (subject, relation, object)           │
+│     ──► Experimental condition contradictions            │
+│   Strategy 2: Opposite relations                         │
+│     ──► Scientific disputes                              │
+│                                                          │
+│   Classification: Rule engine (4 patterns) + LLM fallback│
+│   Significance score: 0.6·log(citations) + 0.4·confidence│
+│   ──► 165 contradictions ranked by impact                │
 └───────────────────────┬──────────────────────────────────┘
                         │
                         ▼
 ┌──────────────────────────────────────────────────────────┐
-│  4. OUTPUT & INTERFACE                                    │
-│  Streamlit dashboard (browse, filter, visualize)          │
-│  LaTeX research paper (auto-generated)                   │
-│  Manual verification CSV (top 100 sampled)               │
-│  Rule engine from verified patterns                      │
+│                   4. INTERFACE & OUTPUT                   │
+│                                                          │
+│   Streamlit web app (browse, filter, visualize)           │
+│   LaTeX research paper (auto-generated)                   │
+│   Manual verification sample (top 100)                    │
+│   Rule engine from verified patterns                     │
 └──────────────────────────────────────────────────────────┘
 ```
 
