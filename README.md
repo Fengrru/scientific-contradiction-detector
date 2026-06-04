@@ -24,52 +24,22 @@ The system makes disagreement **measurable, structured, and queryable**.
 ## How It Works: Four-Phase Pipeline
 
 ```
-┌──────────────────────────────────────────────────────────┐
-│                   1. DATA COLLECTION                      │
-│                                                          │
-│   arXiv API ──► paper metadata (200 papers)              │
-│   Semantic Scholar ──► citation counts                   │
-│   PDF download (15s rate limit)                          │
-│   PyMuPDF text extraction (Results/Discussion/Conclusion)│
-└───────────────────────┬──────────────────────────────────┘
-                        │
-                        ▼
-┌──────────────────────────────────────────────────────────┐
-│                   2. CLAIM EXTRACTION                     │
-│                                                          │
-│   DeepSeek API / Llama 3 8B 4-bit                        │
-│   ──► 6-tuple: <subject> | <relation> | <object>        │
-│                | <condition> | <evidence> | <confidence> │
-│                                                          │
-│   DataCleaner:                                           │
-│   ├── Ontology normalization (GPT-4 → Large Language Model)│
-│   ├── Synonym mapping (enhances → improves)               │
-│   └── Confidence validation (1-5 scale)                  │
-└───────────────────────┬──────────────────────────────────┘
-                        │
-                        ▼
-┌──────────────────────────────────────────────────────────┐
-│                   3. CONTRADICTION DETECTION               │
-│                                                          │
-│   Strategy 1: Same (subject, relation, object)           │
-│     ──► Experimental condition contradictions            │
-│   Strategy 2: Opposite relations                         │
-│     ──► Scientific disputes                              │
-│                                                          │
-│   Classification: Rule engine (4 patterns) + LLM fallback│
-│   Significance score: 0.6·log(citations) + 0.4·confidence│
-│   ──► 165 contradictions ranked by impact                │
-└───────────────────────┬──────────────────────────────────┘
-                        │
-                        ▼
-┌──────────────────────────────────────────────────────────┐
-│                   4. INTERFACE & OUTPUT                   │
-│                                                          │
-│   Streamlit web app (browse, filter, visualize)           │
-│   LaTeX research paper (auto-generated)                   │
-│   Manual verification sample (top 100)                    │
-│   Rule engine from verified patterns                     │
-└──────────────────────────────────────────────────────────┘
+200 papers
+  │
+  ▼ arXiv + Semantic Scholar
+  ▼ PyMuPDF text extraction (Results/Discussion/Conclusion)
+  │
+  ▼ DeepSeek API / Llama 3 8B 4-bit
+  ▼ 6-tuple claims: subject | relation | object | condition | evidence | confidence
+  ▼ DataCleaner: ontology normalization + synonym mapping + confidence validation
+  │
+  ▼ 192 structured claims
+  ▼ Candidate generation (same SRO + opposite relations)
+  ▼ Rule engine (4 patterns) + LLM fallback classification
+  ▼ Significance scoring: 0.6·log(citations) + 0.4·confidence
+  │
+  ▼ 165 verified contradictions
+  ▼ Streamlit dashboard + LaTeX paper + manual verification
 ```
 
 ### Core Data Structure
