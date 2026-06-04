@@ -117,6 +117,10 @@ Contradictions are pairs of these tuples from different papers, classified by ty
 
 ![Contradiction Detection Dashboard](screenshots/homepage.png)
 
+### Contradiction Network
+
+![Contradiction Network](screenshots/contradiction_network.png)
+
 ---
 
 ## Comparison
