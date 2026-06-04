@@ -1,0 +1,108 @@
+# Scientific Contradiction Detection System Configuration
+# Target: Chain-of-Thought Mathematical Reasoning in LLMs
+
+# Project Settings
+project_name: "ScientificContradictionDetector"
+domain: "chain of thought mathematical reasoning"
+version: "1.0.0"
+
+# Data Collection Settings
+data:
+  start_year: 2021
+  max_papers: 200
+  search_query: "chain of thought mathematical reasoning"
+  semantic_scholar_api_key: "YOUR_SEMANTIC_SCHOLAR_API_KEY_HERE"
+  base_path: "./data"
+  pdf_path: "./papers/pdfs"
+  
+# API Rate Limits
+rate_limits:
+  arxiv_download_delay: 15  # seconds between downloads
+  semantic_scholar_delay: 1  # seconds between API calls
+  
+# Model Settings
+model:
+  name: "meta-llama/Meta-Llama-3-8B-Instruct"
+  quantization: "4bit"
+  max_length: 16384
+  temperature: 0.05
+  top_p: 0.95
+
+# API Settings (DeepSeek)
+api:
+  provider: "deepseek"
+  model: "deepseek-chat"
+  deepseek_api_key: "${DEEPSEEK_API_KEY}"  # Set via environment variable
+  
+# Ontology Settings
+ontology:
+  # Core concepts (10 max)
+  concepts:
+    - "Chain-of-Thought"
+    - "Mathematical Reasoning"
+    - "Large Language Model"
+    - "Few-Shot Prompting"
+    - "Zero-Shot Prompting"
+    - "Arithmetic Accuracy"
+    - "Step-by-Step Reasoning"
+    - "Self-Consistency"
+    - "Verification Method"
+    - "Problem Complexity"
+  
+  # Core relations (10 max)
+  relations:
+    - "improves"
+    - "degrades"
+    - "correlates_with"
+    - "outperforms"
+    - "depends_on"
+    - "enables"
+    - "reduces"
+    - "increases"
+    - "equals"
+    - "contradicts"
+  
+  # Contradiction types
+  contradiction_types:
+    - "Experimental_Condition_Contradiction"
+    - "Measurement_Method_Contradiction"
+    - "Statistical_Error_Contradiction"
+    - "Scientific_Dispute"
+    - "Logical_Contradiction"
+    - "No_Contradiction"
+
+# Extraction Settings
+extraction:
+  claim_format: "<subject> | <relation> | <object> | <condition> | <evidence_type> | <confidence>"
+  evidence_types:
+    - "Experimental_Result"
+    - "Theoretical_Analysis"
+    - "Literature_Citation"
+  confidence_scale: [1, 2, 3, 4, 5]
+  
+# Scoring Weights
+scoring:
+  citation_weight: 0.6
+  confidence_weight: 0.4
+  min_significance_threshold: 5.0
+  
+# Random Seeds
+random:
+  seed: 42
+  
+# Output Settings
+output:
+  log_level: "INFO"
+  save_intermediate: true
+  backup_frequency: 10  # backup every N papers processed
+  
+# Evaluation Settings
+evaluation:
+  manual_verification_sample_size: 100
+  target_accuracy: 0.95
+  
+# Paper Writing
+paper:
+  title_max_words: 5
+  target_conference: "arXiv"
+  citation_style: "IEEE"

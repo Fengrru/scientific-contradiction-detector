@@ -1,0 +1,50 @@
+# API Keys and secrets
+.env
+*.key
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+*.egg
+
+# LaTeX compilation artifacts
+*.aux
+*.log
+*.out
+*.synctex*
+*.toc
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.lot
+
+# CodeGraph index (local cache)
+.codegraph/
+
+# Data files (large, auto-generated) - keep for reproducibility
+# data/*.csv
+papers/pdfs/*.pdf
+papers/contradiction_paper.pdf
+
+# Test artifacts
+papers/test/
+
+# IDE and OS
+.vscode/
+.idea/
+*.swp
+*.swo
+Thumbs.db
+Desktop.ini
+
+# Logs
+logs/*.log
+
+# Results (auto-generated)
+results/

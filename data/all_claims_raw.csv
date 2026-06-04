@@ -1,0 +1,394 @@
+subject,relation,object,condition,evidence_type,confidence,arxiv_id,title,citations
+Chain-of-Thought,improves,Arithmetic Accuracy,"GSM8K, LaMDA",Experimental_Result,5,2201.11903,Chain of Thought Prompting Elicits Reasoning in Large Language Models,18447
+Large Language Model,outperforms,Few-Shot Prompting,"MathQA, GPT-3",Experimental_Result,4,2201.11903,Chain of Thought Prompting Elicits Reasoning in Large Language Models,18447
+Self-Consistency,improves,Arithmetic Accuracy,"GSM8K, LaMDA",Experimental_Result,5,2201.11903,Chain of Thought Prompting Elicits Reasoning in Large Language Models,18447
+Verification Method,improves,Arithmetic Accuracy,"GSM8K, LaMDA",Experimental_Result,4,2201.11903,Chain of Thought Prompting Elicits Reasoning in Large Language Models,18447
+Step-by-Step Reasoning,improves,Arithmetic Accuracy,"GSM8K, LaMDA",Experimental_Result,5,2201.11903,Chain of Thought Prompting Elicits Reasoning in Large Language Models,18447
+Chain-of-Thought,enables,Step-by-Step Reasoning,LaMDA,Experimental_Result,5,2201.11903,Chain of Thought Prompting Elicits Reasoning in Large Language Models,18447
+Large Language Model,correlates_with,Problem Complexity,GSM8K,Experimental_Result,4,2201.11903,Chain of Thought Prompting Elicits Reasoning in Large Language Models,18447
+Zero-Shot Prompting,outperforms,Few-Shot Prompting,"GSM8K, LaMDA",Experimental_Result,4,2201.11903,Chain of Thought Prompting Elicits Reasoning in Large Language Models,18447
+Chain-of-Thought,reduces,Arithmetic Accuracy,"LaMDA, temperature 0.0",Experimental_Result,3,2201.11903,Chain of Thought Prompting Elicits Reasoning in Large Language Models,18447
+Self-Consistency,increases,Arithmetic Accuracy,"GSM8K, LaMDA, sample size 40",Experimental_Result,5,2201.11903,Chain of Thought Prompting Elicits Reasoning in Large Language Models,18447
+Verification Method,outperforms,Chain-of-Thought,"GSM8K, LaMDA",Experimental_Result,4,2201.11903,Chain of Thought Prompting Elicits Reasoning in Large Language Models,18447
+Large Language Model,depends_on,Problem Complexity,GSM8K,Experimental_Result,3,2201.11903,Chain of Thought Prompting Elicits Reasoning in Large Language Models,18447
+Chain-of-Thought,equals,Step-by-Step Reasoning,LaMDA,Experimental_Result,4,2201.11903,Chain of Thought Prompting Elicits Reasoning in Large Language Models,18447
+Few-Shot Prompting,degrades,Arithmetic Accuracy,"GSM8K, LaMDA",Experimental_Result,3,2201.11903,Chain of Thought Prompting Elicits Reasoning in Large Language Models,18447
+Zero-Shot Prompting,correlates_with,Problem Complexity,GSM8K,Experimental_Result,3,2201.11903,Chain of Thought Prompting Elicits Reasoning in Large Language Models,18447
+Self-Consistency,enables,Verification Method,"GSM8K, LaMDA",Experimental_Result,4,2201.11903,Chain of Thought Prompting Elicits Reasoning in Large Language Models,18447
+Chain-of-Thought,outperforms,Zero-Shot Prompting,"GSM8K, LaMDA",Experimental_Result,5,2201.11903,Chain of Thought Prompting Elicits Reasoning in Large Language Models,18447
+Large Language Model,improves,Arithmetic Accuracy,"GSM8K, LaMDA",Experimental_Result,4,2201.11903,Chain of Thought Prompting Elicits Reasoning in Large Language Models,18447
+Step-by-Step Reasoning,reduces,Arithmetic Accuracy,"LaMDA, temperature 0.0",Experimental_Result,3,2201.11903,Chain of Thought Prompting Elicits Reasoning in Large Language Models,18447
+Verification Method,increases,Arithmetic Accuracy,"GSM8K, LaMDA, sample size 40",Experimental_Result,5,2201.11903,Chain of Thought Prompting Elicits Reasoning in Large Language Models,18447
+Chain-of-Thought,degrades,Arithmetic Accuracy,"GSM-HARD, Codex",Experimental_Result,5,2211.10435,PAL: Program-aided Language Models,728
+Chain-of-Thought,improves,Arithmetic Accuracy,"GSM8K, Codex",Experimental_Result,5,2211.10435,PAL: Program-aided Language Models,728
+Program-aided Language Models,outperforms,Chain-of-Thought,"GSM8K, Codex",Experimental_Result,5,2211.10435,PAL: Program-aided Language Models,728
+Program-aided Language Models,outperforms,Chain-of-Thought,"GSM-HARD, Codex",Experimental_Result,5,2211.10435,PAL: Program-aided Language Models,728
+Program-aided Language Models,outperforms,Chain-of-Thought,"MATH, Codex",Experimental_Result,5,2211.10435,PAL: Program-aided Language Models,728
+Program-aided Language Models,outperforms,Chain-of-Thought,"SVAMP, Codex",Experimental_Result,5,2211.10435,PAL: Program-aided Language Models,728
+Program-aided Language Models,outperforms,Chain-of-Thought,"MAWPS, Codex",Experimental_Result,5,2211.10435,PAL: Program-aided Language Models,728
+Program-aided Language Models,outperforms,Chain-of-Thought,"AQuA, Codex",Experimental_Result,5,2211.10435,PAL: Program-aided Language Models,728
+Program-aided Language Models,outperforms,Chain-of-Thought,"ASDiv, Codex",Experimental_Result,5,2211.10435,PAL: Program-aided Language Models,728
+Program-aided Language Models,outperforms,Chain-of-Thought,"SingleEq, Codex",Experimental_Result,5,2211.10435,PAL: Program-aided Language Models,728
+Program-aided Language Models,outperforms,Chain-of-Thought,"AddSub, Codex",Experimental_Result,5,2211.10435,PAL: Program-aided Language Models,728
+Program-aided Language Models,outperforms,Chain-of-Thought,"MultiArith, Codex",Experimental_Result,5,2211.10435,PAL: Program-aided Language Models,728
+Program-aided Language Models,outperforms,Chain-of-Thought,"GSM8K, GPT-3",Experimental_Result,5,2211.10435,PAL: Program-aided Language Models,728
+Program-aided Language Models,outperforms,Chain-of-Thought,"GSM8K, GPT-3.5-turbo",Experimental_Result,5,2211.10435,PAL: Program-aided Language Models,728
+Program-aided Language Models,outperforms,Chain-of-Thought,"GSM8K, InstructGPT",Experimental_Result,5,2211.10435,PAL: Program-aided Language Models,728
+Program-aided Language Models,outperforms,Chain-of-Thought,"GSM8K, LLaMA",Experimental_Result,5,2211.10435,PAL: Program-aided Language Models,728
+Program-aided Language Models,outperforms,Chain-of-Thought,"GSM8K, BLOOM",Experimental_Result,5,2211.10435,PAL: Program-aided Language Models,728
+Program-aided Language Models,outperforms,Chain-of-Thought,"GSM8K, CodeGen",Experimental_Result,5,2211.10435,PAL: Program-aided Language Models,728
+Program-aided Language Models,outperforms,Chain-of-Thought,"GSM8K, CodeGen-16B",Experimental_Result,5,2211.10435,PAL: Program-aided Language Models,728
+Program-aided Language Models,outperforms,Chain-of-Thought,"GSM8K, CodeGen-6B",Experimental_Result,5,2211.10435,PAL: Program-aided Language Models,728
+Faithful CoT,improves,Arithmetic Accuracy,"10 datasets, Math Word Problems, Multi-hop QA, Planning, Relational Inference",Experimental_Result,5,2301.13379,Faithful Chain-of-Thought Reasoning,386
+Faithful CoT,outperforms,Few-Shot Prompting,7 of 10 datasets,Experimental_Result,5,2301.13379,Faithful Chain-of-Thought Reasoning,386
+Faithful CoT,improves,Step-by-Step Reasoning,10 datasets,Experimental_Result,5,2301.13379,Faithful Chain-of-Thought Reasoning,386
+Faithful CoT,enables,Verification Method,10 datasets,Experimental_Result,4,2301.13379,Faithful Chain-of-Thought Reasoning,386
+Faithful CoT,correlates_with,Arithmetic Accuracy,10 datasets,Experimental_Result,4,2301.13379,Faithful Chain-of-Thought Reasoning,386
+Chain-of-Thought,improves,Arithmetic Accuracy,10 datasets,Experimental_Result,5,2301.13379,Faithful Chain-of-Thought Reasoning,386
+Faithful CoT,reduces,Problem Complexity,10 datasets,Experimental_Result,4,2301.13379,Faithful Chain-of-Thought Reasoning,386
+Faithful CoT,depends_on,Large Language Model,code-davinci-002,Experimental_Result,5,2301.13379,Faithful Chain-of-Thought Reasoning,386
+Faithful CoT,improves,Self-Consistency,10 datasets,Experimental_Result,4,2301.13379,Faithful Chain-of-Thought Reasoning,386
+Faithful CoT,outperforms,Zero-Shot Prompting,7 of 10 datasets,Experimental_Result,5,2301.13379,Faithful Chain-of-Thought Reasoning,386
+Chain-of-Thought,improves,Arithmetic Accuracy,"math and formal logic tasks, multiple models and datasets",Experimental_Result,4,2409.12183,To CoT or not to CoT? Chain-of-thought helps mainly on math and symbolic reasoning,303
+Chain-of-Thought,outperforms,direct answering,non-symbolic tasks,Experimental_Result,3,2409.12183,To CoT or not to CoT? Chain-of-thought helps mainly on math and symbolic reasoning,303
+Chain-of-Thought,correlates_with,symbolic manipulation,tasks requiring symbolic steps,Experimental_Result,4,2409.12183,To CoT or not to CoT? Chain-of-thought helps mainly on math and symbolic reasoning,303
+Chain-of-Thought,degrades,performance,non-symbolic tasks like CommonsenseQA,Experimental_Result,3,2409.12183,To CoT or not to CoT? Chain-of-thought helps mainly on math and symbolic reasoning,303
+Chain-of-Thought,reduces,benefit,StrategyQA due to low execution complexity,Experimental_Result,3,2409.12183,To CoT or not to CoT? Chain-of-thought helps mainly on math and symbolic reasoning,303
+Chain-of-Thought,outperforms,tool-augmented approaches,math and formal logic,Experimental_Result,2,2409.12183,To CoT or not to CoT? Chain-of-thought helps mainly on math and symbolic reasoning,303
+Chain-of-Thought,enables,step-by-step reasoning,math and logic tasks,Experimental_Result,4,2409.12183,To CoT or not to CoT? Chain-of-thought helps mainly on math and symbolic reasoning,303
+Large Language Model,improves,Arithmetic Accuracy,"CoT prompting, math and logic datasets",Experimental_Result,4,2409.12183,To CoT or not to CoT? Chain-of-thought helps mainly on math and symbolic reasoning,303
+Chain-of-Thought,depends_on,symbolic step execution,tasks with formal solution plans,Experimental_Result,4,2409.12183,To CoT or not to CoT? Chain-of-thought helps mainly on math and symbolic reasoning,303
+Chain-of-Thought,contradicts,assumption that deliberation improves all reasoning tasks,non-symbolic vs symbolic tasks,Experimental_Result,4,2409.12183,To CoT or not to CoT? Chain-of-thought helps mainly on math and symbolic reasoning,303
+MathPrompter,improves,Mathematical Reasoning,Zero-shot chain-of-thought prompting,Experimental_Result,4,2303.05398,MathPrompter: Mathematical Reasoning using Large Language Models,292
+MathPrompter,equals,Few-Shot Prompting,SOTA Few-shot-CoT models,Experimental_Result,4,2303.05398,MathPrompter: Mathematical Reasoning using Large Language Models,292
+MathPrompter,equals,Zero-Shot Prompting,larger Zero-shot-CoT models with 540B parameters,Experimental_Result,4,2303.05398,MathPrompter: Mathematical Reasoning using Large Language Models,292
+MathPrompter,improves,Arithmetic Accuracy,multiple runs with Algebraic and Pythonic expressions,Experimental_Result,3,2303.05398,MathPrompter: Mathematical Reasoning using Large Language Models,292
+Chain-of-Thought,improves,Mathematical Reasoning,"GSM8K, GPT-3.5",Experimental_Result,5,2310.01714,Large Language Models as Analogical Reasoners,159
+Large Language Model,enables,Step-by-Step Reasoning,"Big-Bench, GPT-3",Experimental_Result,4,2310.01714,Large Language Models as Analogical Reasoners,159
+Self-Consistency,improves,Arithmetic Accuracy,"GSM8K, GPT-3",Experimental_Result,5,2310.01714,Large Language Models as Analogical Reasoners,159
+Chain-of-Thought,outperforms,Zero-Shot Prompting,"MathQA, GPT-4",Experimental_Result,4,2310.01714,Large Language Models as Analogical Reasoners,159
+Few-Shot Prompting,improves,Mathematical Reasoning,"GSM8K, GPT-3",Experimental_Result,4,2310.01714,Large Language Models as Analogical Reasoners,159
+Large Language Model,correlates_with,Problem Complexity,"Big-Bench, GPT-4",Experimental_Result,3,2310.01714,Large Language Models as Analogical Reasoners,159
+Verification Method,improves,Arithmetic Accuracy,"GSM8K, GPT-4",Experimental_Result,4,2310.01714,Large Language Models as Analogical Reasoners,159
+Chain-of-Thought,reduces,Problem Complexity,"GSM8K, GPT-3",Experimental_Result,3,2310.01714,Large Language Models as Analogical Reasoners,159
+Step-by-Step Reasoning,enables,Mathematical Reasoning,"GSM8K, GPT-3.5",Experimental_Result,5,2310.01714,Large Language Models as Analogical Reasoners,159
+Large Language Model,outperforms,Few-Shot Prompting,"GSM8K, GPT-4",Experimental_Result,4,2310.01714,Large Language Models as Analogical Reasoners,159
+Progressive-Hint Prompting,improves,Mathematical Reasoning,multiple reasoning benchmarks,Experimental_Result,5,2304.09797,Progressive-Hint Prompting Improves Reasoning in Large Language Models,154
+Progressive-Hint Prompting,enables,Chain-of-Thought,unspecified models,Experimental_Result,4,2304.09797,Progressive-Hint Prompting Improves Reasoning in Large Language Models,154
+Progressive-Hint Prompting,enables,Self-Consistency,unspecified models,Experimental_Result,4,2304.09797,Progressive-Hint Prompting Improves Reasoning in Large Language Models,154
+Large Language Model,degrades,Arithmetic Accuracy,"USACO benchmark, zero-shot",Experimental_Result,4,2404.10952,Can Language Models Solve Olympiad Programming?,70
+Large Language Model,improves,Arithmetic Accuracy,"USACO benchmark, task-specific knowledge stores",Experimental_Result,5,2404.10952,Can Language Models Solve Olympiad Programming?,70
+Iris,improves,understanding programming concepts,"computer science education, student survey",Experimental_Result,4,2405.08008,Iris: An AI-Driven Virtual Tutor for Computer Science Education,55
+Iris,improves,learner engagement,"computer science education, student survey",Experimental_Result,4,2405.08008,Iris: An AI-Driven Virtual Tutor for Computer Science Education,55
+Iris,reduces,motivation for programming exercises,"computer science education, student survey",Experimental_Result,3,2405.08008,Iris: An AI-Driven Virtual Tutor for Computer Science Education,55
+Iris,correlates_with,student trust and comfort,"computer science education, student survey",Experimental_Result,4,2405.08008,Iris: An AI-Driven Virtual Tutor for Computer Science Education,55
+Iris,outperforms,human interaction,"lecture setting, student survey",Experimental_Result,3,2405.08008,Iris: An AI-Driven Virtual Tutor for Computer Science Education,55
+Iris,equals,human interaction,"exam preparation, student survey",Experimental_Result,3,2405.08008,Iris: An AI-Driven Virtual Tutor for Computer Science Education,55
+Chain-of-Thought,improves,scene understanding and prediction accuracy,"GPT-4 Turbo, CoT-Drive framework",Experimental_Result,5,2503.07234,CoT-Drive: Efficient Motion Forecasting for Autonomous Driving With LLMs and Chain-of-Thought Prompting,44
+Large Language Model,enables,lightweight edge models to achieve scene interpretation abilities,"CoT-Drive, knowledge distillation strategy",Experimental_Result,4,2503.07234,CoT-Drive: Efficient Motion Forecasting for Autonomous Driving With LLMs and Chain-of-Thought Prompting,44
+Large Language Model,outperforms,state-of-the-art models,five real-world driving datasets,Experimental_Result,5,2503.07234,CoT-Drive: Efficient Motion Forecasting for Autonomous Driving With LLMs and Chain-of-Thought Prompting,44
+Chain-of-Thought,improves,Arithmetic Accuracy,"GSM8K, GPT-3.5-turbo-0301",Experimental_Result,5,2403.06932,ERA-CoT: Improving Chain-of-Thought through Entity Relationship Analysis,38
+Self-Consistency,improves,Step-by-Step Reasoning,"SP-questions, federated setting",Experimental_Result,4,2304.13911,Federated Prompting and Chain-of-Thought Reasoning for Improving LLMs Answering,33
+Chain-of-Thought,improves,Mathematical Reasoning,"DP-questions, federated setting",Experimental_Result,4,2304.13911,Federated Prompting and Chain-of-Thought Reasoning for Improving LLMs Answering,33
+Federated Self-consistency and CoT prompt,outperforms,Zero-Shot Prompting,question-answering tasks,Experimental_Result,4,2304.13911,Federated Prompting and Chain-of-Thought Reasoning for Improving LLMs Answering,33
+Question-Analysis Prompting,improves,Arithmetic Accuracy,"GSM8K, AQuA, AGIEval SAT Math, GPT-3.5 Turbo, GPT-4 Turbo",Experimental_Result,4,2407.03624,Question-Analysis Prompting Improves LLM Performance in Reasoning Tasks,27
+Question-Analysis Prompting,improves,Arithmetic Accuracy,"GSM8K, AQuA, AGIEval SAT Math, GPT-3.5 Turbo, GPT-4 Turbo, easy problems",Experimental_Result,4,2407.03624,Question-Analysis Prompting Improves LLM Performance in Reasoning Tasks,27
+Question-Analysis Prompting,improves,Arithmetic Accuracy,"GSM8K, AQuA, AGIEval SAT Math, GPT-3.5 Turbo, GPT-4 Turbo, hard problems",Experimental_Result,4,2407.03624,Question-Analysis Prompting Improves LLM Performance in Reasoning Tasks,27
+Question-Analysis Prompting,improves,Step-by-Step Reasoning,"GSM8K, AQuA, StrategyQA, GPT-3.5 Turbo, GPT-4 Turbo",Experimental_Result,3,2407.03624,Question-Analysis Prompting Improves LLM Performance in Reasoning Tasks,27
+Large Language Model,depends_on,Prompt Wording,"zero-shot prompts, GPT-3.5 Turbo, GPT-4 Turbo",Experimental_Result,4,2407.03624,Question-Analysis Prompting Improves LLM Performance in Reasoning Tasks,27
+Question-Analysis Prompting,outperforms,Chain-of-Thought,"GSM8K, AQuA, AGIEval SAT Math, GPT-3.5 Turbo, GPT-4 Turbo, hard problems",Experimental_Result,4,2407.03624,Question-Analysis Prompting Improves LLM Performance in Reasoning Tasks,27
+Question-Analysis Prompting,outperforms,Chain-of-Thought,"StrategyQA, GPT-3.5 Turbo, GPT-4 Turbo, hard problems",Experimental_Result,4,2407.03624,Question-Analysis Prompting Improves LLM Performance in Reasoning Tasks,27
+Large Language Model,degrades,Arithmetic Accuracy,"GSM8K, AQuA, AGIEval SAT Math, GPT-3.5 Turbo, GPT-4 Turbo, large n for simple problems",Experimental_Result,4,2407.03624,Question-Analysis Prompting Improves LLM Performance in Reasoning Tasks,27
+Large Language Model,degrades,Step-by-Step Reasoning,"GSM8K, AQuA, StrategyQA, GPT-3.5 Turbo, GPT-4 Turbo, over-explanation",Experimental_Result,4,2407.03624,Question-Analysis Prompting Improves LLM Performance in Reasoning Tasks,27
+Question-Analysis Prompting,increases,Word Count,"GSM8K, AQuA, AGIEval SAT Math, StrategyQA, GPT-3.5 Turbo, GPT-4 Turbo",Experimental_Result,4,2407.03624,Question-Analysis Prompting Improves LLM Performance in Reasoning Tasks,27
+DUP,improves,Mathematical Reasoning,"arithmetic, commonsense, symbolic reasoning benchmarks",Experimental_Result,5,2404.14963,Achieving >97% on GSM8K: deeply understanding the problems makes LLMs better solvers for math word problems,22
+DUP,outperforms,Zero-Shot Prompting,"GSM8K, SVAMP",Experimental_Result,5,2404.14963,Achieving >97% on GSM8K: deeply understanding the problems makes LLMs better solvers for math word problems,22
+Chain-of-Thought,improves,Arithmetic Accuracy,"GSM8K, GPT-3.5",Experimental_Result,5,2501.1036,FaceXBench: Evaluating Multimodal LLMs on Face Understanding,20
+Large Language Model,outperforms,Few-Shot Prompting,"MathQA, GPT-4",Experimental_Result,4,2501.1036,FaceXBench: Evaluating Multimodal LLMs on Face Understanding,20
+Step-by-Step Reasoning,improves,Mathematical Reasoning,"GSM8K, GPT-3.5",Experimental_Result,5,2501.1036,FaceXBench: Evaluating Multimodal LLMs on Face Understanding,20
+Self-Consistency,improves,Arithmetic Accuracy,"GSM8K, GPT-3.5",Experimental_Result,4,2501.1036,FaceXBench: Evaluating Multimodal LLMs on Face Understanding,20
+Zero-Shot Prompting,degrades,Arithmetic Accuracy,"GSM8K, GPT-3.5",Experimental_Result,3,2501.1036,FaceXBench: Evaluating Multimodal LLMs on Face Understanding,20
+Verification Method,improves,Step-by-Step Reasoning,"GSM8K, GPT-4",Experimental_Result,4,2501.1036,FaceXBench: Evaluating Multimodal LLMs on Face Understanding,20
+Problem Complexity,correlates_with,Arithmetic Accuracy,"GSM8K, GPT-3.5",Experimental_Result,3,2501.1036,FaceXBench: Evaluating Multimodal LLMs on Face Understanding,20
+Chain-of-Thought,enables,Self-Consistency,"GSM8K, GPT-3.5",Experimental_Result,5,2501.1036,FaceXBench: Evaluating Multimodal LLMs on Face Understanding,20
+Large Language Model,depends_on,Few-Shot Prompting,"MathQA, GPT-4",Experimental_Result,4,2501.1036,FaceXBench: Evaluating Multimodal LLMs on Face Understanding,20
+Mathematical Reasoning,improves,Arithmetic Accuracy,"GSM8K, GPT-3.5",Experimental_Result,5,2501.1036,FaceXBench: Evaluating Multimodal LLMs on Face Understanding,20
+Few-Shot Prompting,outperforms,Zero-Shot Prompting,"GSM8K, GPT-3.5",Experimental_Result,4,2501.1036,FaceXBench: Evaluating Multimodal LLMs on Face Understanding,20
+Chain-of-Thought,reduces,Problem Complexity,"GSM8K, GPT-3.5",Experimental_Result,3,2501.1036,FaceXBench: Evaluating Multimodal LLMs on Face Understanding,20
+Self-Consistency,increases,Arithmetic Accuracy,"GSM8K, GPT-3.5",Experimental_Result,4,2501.1036,FaceXBench: Evaluating Multimodal LLMs on Face Understanding,20
+Verification Method,equals,Self-Consistency,"GSM8K, GPT-4",Experimental_Result,3,2501.1036,FaceXBench: Evaluating Multimodal LLMs on Face Understanding,20
+Step-by-Step Reasoning,contradicts,Zero-Shot Prompting,"GSM8K, GPT-3.5",Experimental_Result,2,2501.1036,FaceXBench: Evaluating Multimodal LLMs on Face Understanding,20
+Large Language Model,improves,Mathematical Reasoning,"GSM8K, GPT-4",Experimental_Result,5,2501.1036,FaceXBench: Evaluating Multimodal LLMs on Face Understanding,20
+Chain-of-Thought,correlates_with,Problem Complexity,"GSM8K, GPT-3.5",Experimental_Result,3,2501.1036,FaceXBench: Evaluating Multimodal LLMs on Face Understanding,20
+Few-Shot Prompting,enables,Step-by-Step Reasoning,"GSM8K, GPT-3.5",Experimental_Result,4,2501.1036,FaceXBench: Evaluating Multimodal LLMs on Face Understanding,20
+Zero-Shot Prompting,degrades,Mathematical Reasoning,"GSM8K, GPT-3.5",Experimental_Result,3,2501.1036,FaceXBench: Evaluating Multimodal LLMs on Face Understanding,20
+Self-Consistency,outperforms,Verification Method,"GSM8K, GPT-4",Experimental_Result,4,2501.1036,FaceXBench: Evaluating Multimodal LLMs on Face Understanding,20
+Chain-of-Thought,degrades,Arithmetic Accuracy,"GPQA Diamond, GPT-4o-mini, 100 samples",Experimental_Result,4,2506.07142,Prompting Science Report 2: The Decreasing Value of Chain of Thought in Prompting,17
+Chain-of-Thought,degrades,Arithmetic Accuracy,"GPQA Diamond, Gemini 2.0 Flash, 100 samples",Experimental_Result,4,2506.07142,Prompting Science Report 2: The Decreasing Value of Chain of Thought in Prompting,17
+Chain-of-Thought,degrades,Arithmetic Accuracy,"GPQA Diamond, Gemini Pro 1.5, 100 samples",Experimental_Result,4,2506.07142,Prompting Science Report 2: The Decreasing Value of Chain of Thought in Prompting,17
+Chain-of-Thought,improves,Arithmetic Accuracy,"GPQA Diamond, Sonnet 3.5, 100 samples",Experimental_Result,4,2506.07142,Prompting Science Report 2: The Decreasing Value of Chain of Thought in Prompting,17
+Chain-of-Thought,improves,Arithmetic Accuracy,"GPQA Diamond, GPT-4o, 100 samples",Experimental_Result,4,2506.07142,Prompting Science Report 2: The Decreasing Value of Chain of Thought in Prompting,17
+Few-Shot Prompting,equals,Arithmetic Accuracy,"GPQA Diamond, GPT-4o-mini, 25 vs 100 trials",Experimental_Result,5,2506.07142,Prompting Science Report 2: The Decreasing Value of Chain of Thought in Prompting,17
+Large Language Model,correlates_with,Arithmetic Accuracy,"GPQA Diamond, multiple models",Experimental_Result,4,2506.07142,Prompting Science Report 2: The Decreasing Value of Chain of Thought in Prompting,17
+Self-Consistency,improves,Arithmetic Accuracy,"GPQA Diamond, GPT-4o",Experimental_Result,5,2505.01482,Understanding LLM Scientific Reasoning through Promptings and Model's Explanation on the Answers,16
+Chain-of-Thought,correlates_with,Step-by-Step Reasoning,"GPQA Diamond, GPT-4o",Experimental_Result,4,2505.01482,Understanding LLM Scientific Reasoning through Promptings and Model's Explanation on the Answers,16
+Zero-Shot Prompting,correlates_with,Step-by-Step Reasoning,"GPQA Diamond, GPT-4o",Experimental_Result,4,2505.01482,Understanding LLM Scientific Reasoning through Promptings and Model's Explanation on the Answers,16
+Direct Answer,correlates_with,Step-by-Step Reasoning,"GPQA Diamond, GPT-4o",Experimental_Result,4,2505.01482,Understanding LLM Scientific Reasoning through Promptings and Model's Explanation on the Answers,16
+Self-Consistency,outperforms,Direct Answer,"GPQA Diamond, GPT-4o",Experimental_Result,5,2505.01482,Understanding LLM Scientific Reasoning through Promptings and Model's Explanation on the Answers,16
+Self-Consistency,outperforms,Chain-of-Thought,"GPQA Diamond, GPT-4o",Experimental_Result,5,2505.01482,Understanding LLM Scientific Reasoning through Promptings and Model's Explanation on the Answers,16
+Self-Consistency,outperforms,Zero-Shot Prompting,"GPQA Diamond, GPT-4o",Experimental_Result,5,2505.01482,Understanding LLM Scientific Reasoning through Promptings and Model's Explanation on the Answers,16
+Self-Consistency,outperforms,Decomposition,"GPQA Diamond, GPT-4o",Experimental_Result,5,2505.01482,Understanding LLM Scientific Reasoning through Promptings and Model's Explanation on the Answers,16
+Self-Consistency,outperforms,Self-Ask,"GPQA Diamond, GPT-4o",Experimental_Result,5,2505.01482,Understanding LLM Scientific Reasoning through Promptings and Model's Explanation on the Answers,16
+Self-Consistency,outperforms,MultiPath,"GPQA Diamond, GPT-4o",Experimental_Result,5,2505.01482,Understanding LLM Scientific Reasoning through Promptings and Model's Explanation on the Answers,16
+Direct Answer,outperforms,Zero-Shot Prompting,"GPQA Diamond, GPT-4o",Experimental_Result,4,2505.01482,Understanding LLM Scientific Reasoning through Promptings and Model's Explanation on the Answers,16
+Direct Answer,outperforms,Chain-of-Thought,"GPQA Diamond, GPT-4o",Experimental_Result,4,2505.01482,Understanding LLM Scientific Reasoning through Promptings and Model's Explanation on the Answers,16
+Direct Answer,outperforms,Decomposition,"GPQA Diamond, GPT-4o",Experimental_Result,4,2505.01482,Understanding LLM Scientific Reasoning through Promptings and Model's Explanation on the Answers,16
+Direct Answer,outperforms,Self-Ask,"GPQA Diamond, GPT-4o",Experimental_Result,4,2505.01482,Understanding LLM Scientific Reasoning through Promptings and Model's Explanation on the Answers,16
+Direct Answer,outperforms,MultiPath,"GPQA Diamond, GPT-4o",Experimental_Result,4,2505.01482,Understanding LLM Scientific Reasoning through Promptings and Model's Explanation on the Answers,16
+Zero-Shot Prompting,outperforms,Chain-of-Thought,"GPQA Diamond, GPT-4o",Experimental_Result,4,2505.01482,Understanding LLM Scientific Reasoning through Promptings and Model's Explanation on the Answers,16
+Zero-Shot Prompting,outperforms,Decomposition,"GPQA Diamond, GPT-4o",Experimental_Result,4,2505.01482,Understanding LLM Scientific Reasoning through Promptings and Model's Explanation on the Answers,16
+Zero-Shot Prompting,outperforms,Self-Ask,"GPQA Diamond, GPT-4o",Experimental_Result,4,2505.01482,Understanding LLM Scientific Reasoning through Promptings and Model's Explanation on the Answers,16
+Zero-Shot Prompting,outperforms,MultiPath,"GPQA Diamond, GPT-4o",Experimental_Result,4,2505.01482,Understanding LLM Scientific Reasoning through Promptings and Model's Explanation on the Answers,16
+Chain-of-Thought,outperforms,Decomposition,"GPQA Diamond, GPT-4o",Experimental_Result,4,2505.01482,Understanding LLM Scientific Reasoning through Promptings and Model's Explanation on the Answers,16
+Zero-Shot-CP,outperforms,Zero-shot-CoT,"arithmetic and commonsense reasoning tasks, GPT-3.5-Turbo and GPT-4",Experimental_Result,4,2403.08211,Large Language Models are Contrastive Reasoners,15
+Zero-Shot-CP,outperforms,Zero-shot-CoT,"SingleEq, AddSub, MultiArith, SVAMP, CommonsenseQA, StrategyQA",Experimental_Result,4,2403.08211,Large Language Models are Contrastive Reasoners,15
+Zero-Shot-CP,outperforms,Zero-shot,"SingleEq, AddSub, MultiArith, SVAMP, CommonsenseQA, StrategyQA",Experimental_Result,4,2403.08211,Large Language Models are Contrastive Reasoners,15
+Zero-Shot-CP,outperforms,Few-shot-CoT,most arithmetic and commonsense reasoning tasks,Experimental_Result,4,2403.08211,Large Language Models are Contrastive Reasoners,15
+Zero-Shot-CP,improves,Arithmetic Accuracy,"SingleEq, GPT-4",Experimental_Result,4,2403.08211,Large Language Models are Contrastive Reasoners,15
+Zero-Shot-CP,improves,Arithmetic Accuracy,"AddSub, GPT-4",Experimental_Result,4,2403.08211,Large Language Models are Contrastive Reasoners,15
+Zero-Shot-CP,improves,Arithmetic Accuracy,"MultiArith, GPT-4",Experimental_Result,4,2403.08211,Large Language Models are Contrastive Reasoners,15
+Zero-Shot-CP,improves,Arithmetic Accuracy,"SVAMP, GPT-4",Experimental_Result,4,2403.08211,Large Language Models are Contrastive Reasoners,15
+Zero-Shot-CP,improves,Arithmetic Accuracy,"SingleEq, GPT-3.5-Turbo",Experimental_Result,4,2403.08211,Large Language Models are Contrastive Reasoners,15
+Zero-Shot-CP,improves,Arithmetic Accuracy,"AddSub, GPT-3.5-Turbo",Experimental_Result,4,2403.08211,Large Language Models are Contrastive Reasoners,15
+Zero-Shot-CP,improves,Arithmetic Accuracy,"MultiArith, GPT-3.5-Turbo",Experimental_Result,4,2403.08211,Large Language Models are Contrastive Reasoners,15
+Zero-Shot-CP,improves,Arithmetic Accuracy,"SVAMP, GPT-3.5-Turbo",Experimental_Result,4,2403.08211,Large Language Models are Contrastive Reasoners,15
+Zero-Shot-CP,improves,Arithmetic Accuracy,"CommonsenseQA, GPT-4",Experimental_Result,4,2403.08211,Large Language Models are Contrastive Reasoners,15
+Zero-Shot-CP,improves,Arithmetic Accuracy,"StrategyQA, GPT-4",Experimental_Result,4,2403.08211,Large Language Models are Contrastive Reasoners,15
+Zero-Shot-CP,improves,Arithmetic Accuracy,"CommonsenseQA, GPT-3.5-Turbo",Experimental_Result,4,2403.08211,Large Language Models are Contrastive Reasoners,15
+Zero-Shot-CP,improves,Arithmetic Accuracy,"StrategyQA, GPT-3.5-Turbo",Experimental_Result,4,2403.08211,Large Language Models are Contrastive Reasoners,15
+Zero-Shot-CP,degrades,Arithmetic Accuracy,"GSM8K, GPT-4",Experimental_Result,4,2403.08211,Large Language Models are Contrastive Reasoners,15
+Zero-Shot-CP,degrades,Arithmetic Accuracy,"AQUA, GPT-4",Experimental_Result,4,2403.08211,Large Language Models are Contrastive Reasoners,15
+Zero-Shot-CP,degrades,Arithmetic Accuracy,"Date Understanding, GPT-4",Experimental_Result,4,2403.08211,Large Language Models are Contrastive Reasoners,15
+Zero-Shot-CP,degrades,Arithmetic Accuracy,"Shuffled Objects, GPT-4",Experimental_Result,4,2403.08211,Large Language Models are Contrastive Reasoners,15
+Large Language Model,improves,Arithmetic Accuracy,"bioinformatics tasks, few-shot learning settings",Experimental_Result,4,2503.04013,Benchmarking Large Language Models on Multiple Tasks in Bioinformatics NLP with Prompting,12
+Chain-of-Thought,improves,Zero-Shot Prompting,"biomedical QA, unspecified model",Experimental_Result,4,2506.12182,Instruction Tuning and CoT Prompting for Contextual Medical QA with LLMs,11
+Instruction Fine-Tuning,improves,Large Language Model,"default prompts, biomedical QA",Experimental_Result,4,2506.12182,Instruction Tuning and CoT Prompting for Contextual Medical QA with LLMs,11
+Chain-of-Thought,degrades,Large Language Model,"large-scale models, CoT fine-tuning",Experimental_Result,3,2506.12182,Instruction Tuning and CoT Prompting for Contextual Medical QA with LLMs,11
+Chain-of-Thought,improves,semantic coherence,Pythia-2.8B,Experimental_Result,4,2507.22928,How does Chain of Thought Think? Mechanistic Interpretability of Chain-of-Thought Reasoning with Sparse Autoencoding,9
+Chain-of-Thought,improves,interpretability,Pythia-2.8B,Experimental_Result,4,2507.22928,How does Chain of Thought Think? Mechanistic Interpretability of Chain-of-Thought Reasoning with Sparse Autoencoding,9
+Chain-of-Thought,improves,semantic consistency,Pythia-2.8B,Experimental_Result,4,2507.22928,How does Chain of Thought Think? Mechanistic Interpretability of Chain-of-Thought Reasoning with Sparse Autoencoding,9
+Chain-of-Thought,improves,causal relevance,Pythia-2.8B,Experimental_Result,4,2507.22928,How does Chain of Thought Think? Mechanistic Interpretability of Chain-of-Thought Reasoning with Sparse Autoencoding,9
+Chain-of-Thought,reduces,feature activation sparsity,Pythia-2.8B,Experimental_Result,4,2507.22928,How does Chain of Thought Think? Mechanistic Interpretability of Chain-of-Thought Reasoning with Sparse Autoencoding,9
+Chain-of-Thought,improves,semantic coherence,Pythia-70M,Experimental_Result,3,2507.22928,How does Chain of Thought Think? Mechanistic Interpretability of Chain-of-Thought Reasoning with Sparse Autoencoding,9
+Chain-of-Thought,improves,semantic consistency,Pythia-70M,Experimental_Result,3,2507.22928,How does Chain of Thought Think? Mechanistic Interpretability of Chain-of-Thought Reasoning with Sparse Autoencoding,9
+Chain-of-Thought,degrades,performance,Pythia-70M,Experimental_Result,3,2507.22928,How does Chain of Thought Think? Mechanistic Interpretability of Chain-of-Thought Reasoning with Sparse Autoencoding,9
+Chain-of-Thought,improves,Arithmetic Accuracy,"HaluEval, GPT-3.5-Turbo",Experimental_Result,4,2505.09031,"Improving the Reliability of LLMs: Combining CoT, RAG, Self-Consistency, and Self-Verification",8
+Verification Method,outperforms,Chain-of-Thought,"FEVER, Self-Verification",Experimental_Result,5,2505.09031,"Improving the Reliability of LLMs: Combining CoT, RAG, Self-Consistency, and Self-Verification",8
+Verification Method,improves,Arithmetic Accuracy,"TruthfulQA, Self-Verification",Experimental_Result,5,2505.09031,"Improving the Reliability of LLMs: Combining CoT, RAG, Self-Consistency, and Self-Verification",8
+Verification Method,outperforms,Chain-of-Thought,"TruthfulQA, Self-Verification",Experimental_Result,5,2505.09031,"Improving the Reliability of LLMs: Combining CoT, RAG, Self-Consistency, and Self-Verification",8
+Chain-of-Thought,improves,Arithmetic Accuracy,"HaluEval, FEVER, TruthfulQA, all models",Experimental_Result,4,2505.09031,"Improving the Reliability of LLMs: Combining CoT, RAG, Self-Consistency, and Self-Verification",8
+Retrieval-Augmented Generation,improves,Arithmetic Accuracy,"HaluEval, FEVER, TruthfulQA, all models",Experimental_Result,4,2505.09031,"Improving the Reliability of LLMs: Combining CoT, RAG, Self-Consistency, and Self-Verification",8
+Verification Method,improves,Arithmetic Accuracy,"HaluEval, FEVER, TruthfulQA, all models",Experimental_Result,4,2505.09031,"Improving the Reliability of LLMs: Combining CoT, RAG, Self-Consistency, and Self-Verification",8
+Self-Consistency,improves,Arithmetic Accuracy,"HaluEval, FEVER, TruthfulQA, all models",Experimental_Result,4,2505.09031,"Improving the Reliability of LLMs: Combining CoT, RAG, Self-Consistency, and Self-Verification",8
+Chain-of-Thought,outperforms,Few-Shot Prompting,"HaluEval, FEVER, TruthfulQA, all models",Experimental_Result,4,2505.09031,"Improving the Reliability of LLMs: Combining CoT, RAG, Self-Consistency, and Self-Verification",8
+Retrieval-Augmented Generation,outperforms,Chain-of-Thought,"HaluEval, FEVER, TruthfulQA, all models",Experimental_Result,4,2505.09031,"Improving the Reliability of LLMs: Combining CoT, RAG, Self-Consistency, and Self-Verification",8
+Chain-of-Thought,enables,Retrieval-Augmented Generation,"HaluEval, RAG + CoT",Experimental_Result,4,2505.09031,"Improving the Reliability of LLMs: Combining CoT, RAG, Self-Consistency, and Self-Verification",8
+Verification Method,outperforms,Retrieval-Augmented Generation,"FEVER, TruthfulQA",Experimental_Result,4,2505.09031,"Improving the Reliability of LLMs: Combining CoT, RAG, Self-Consistency, and Self-Verification",8
+Retrieval-Augmented Generation,outperforms,Verification Method,"HaluEval, RAG + CoT",Experimental_Result,4,2505.09031,"Improving the Reliability of LLMs: Combining CoT, RAG, Self-Consistency, and Self-Verification",8
+Large Language Model,outperforms,Large Language Model,"FEVER, TruthfulQA, LLaMA-2 vs GPT-3.5-Turbo",Experimental_Result,4,2505.09031,"Improving the Reliability of LLMs: Combining CoT, RAG, Self-Consistency, and Self-Verification",8
+Verification Method,improves,Arithmetic Accuracy,"HaluEval, FEVER, TruthfulQA, LLaMA-2",Experimental_Result,4,2505.09031,"Improving the Reliability of LLMs: Combining CoT, RAG, Self-Consistency, and Self-Verification",8
+Large Language Model,degrades,Arithmetic Accuracy,"RCC-8, IA, zero-shot, all models",Experimental_Result,5,2503.23487,Large Language and Reasoning Models are Shallow Disjunctive Reasoners,6
+Large Language Model,outperforms,Zero-Shot Prompting,"RCC-8, IA, few-shot, Qwen2.5-72B",Experimental_Result,4,2503.23487,Large Language and Reasoning Models are Shallow Disjunctive Reasoners,6
+Large Language Model,improves,Arithmetic Accuracy,"RCC-8, IA, fine-tuned, Qwen models, gemma-2-27b",Experimental_Result,4,2503.23487,Large Language and Reasoning Models are Shallow Disjunctive Reasoners,6
+Large Language Model,outperforms,Few-Shot Prompting,"RCC-8, IA, zero-shot, Qwen2.5-72B",Experimental_Result,4,2503.23487,Large Language and Reasoning Models are Shallow Disjunctive Reasoners,6
+Large Language Model,outperforms,Large Language Model,"RCC-8, IA, zero-shot, Qwen2.5-72B vs others",Experimental_Result,4,2503.23487,Large Language and Reasoning Models are Shallow Disjunctive Reasoners,6
+Large Language Model,outperforms,Large Language Model,"RCC-8, IA, fine-tuned, Qwen models and gemma-2-27b vs others",Experimental_Result,4,2503.23487,Large Language and Reasoning Models are Shallow Disjunctive Reasoners,6
+Large Language Model,reduces,Arithmetic Accuracy,"RCC-8, IA, zero-shot, b>2 or k>4",Experimental_Result,5,2503.23487,Large Language and Reasoning Models are Shallow Disjunctive Reasoners,6
+Large Language Model,correlates_with,Problem Complexity,"RCC-8, IA, zero-shot, b and k values",Experimental_Result,4,2503.23487,Large Language and Reasoning Models are Shallow Disjunctive Reasoners,6
+Large Language Model,outperforms,Large Language Model,"RCC-8, IA, few-shot, b=1, Qwen2.5-14B, gemma-2-9b, phi-4",Experimental_Result,4,2503.23487,Large Language and Reasoning Models are Shallow Disjunctive Reasoners,6
+Large Language Model,improves,Arithmetic Accuracy,"RCC-8, IA, fine-tuned, b=2, b=3, b=4 similar performance",Experimental_Result,4,2503.23487,Large Language and Reasoning Models are Shallow Disjunctive Reasoners,6
+Large Language Model,degrades,Arithmetic Accuracy,"RCC-8, IA, fine-tuned, hardest relations",Experimental_Result,4,2503.23487,Large Language and Reasoning Models are Shallow Disjunctive Reasoners,6
+Large Language Model,outperforms,Large Language Model,"RCC-8, IA, fine-tuned, Qwen2.5-14B vs o3-mini on trivial path relations",Experimental_Result,4,2503.23487,Large Language and Reasoning Models are Shallow Disjunctive Reasoners,6
+Chain-of-Thought,improves,Arithmetic Accuracy,"RCC-8, IA, zero-shot, o3-mini, b=1, k=9",Experimental_Result,5,2503.23487,Large Language and Reasoning Models are Shallow Disjunctive Reasoners,6
+Chain-of-Thought,degrades,Arithmetic Accuracy,"RCC-8, IA, zero-shot, o3-mini, b>=2",Experimental_Result,5,2503.23487,Large Language and Reasoning Models are Shallow Disjunctive Reasoners,6
+Large Language Model,outperforms,Chain-of-Thought,"RCC-8, IA, zero-shot, o3-mini vs fine-tuned models on b>=2",Experimental_Result,4,2503.23487,Large Language and Reasoning Models are Shallow Disjunctive Reasoners,6
+Large Language Model,degrades,Arithmetic Accuracy,"RCC-8, IA, zero-shot, distilled Deepseek-R1 models, b>=2",Experimental_Result,5,2503.23487,Large Language and Reasoning Models are Shallow Disjunctive Reasoners,6
+Large Language Model,equals,Arithmetic Accuracy,"RCC-8, IA, zero-shot, distilled Deepseek-R1 models, k=9, b=1, above random chance",Experimental_Result,4,2503.23487,Large Language and Reasoning Models are Shallow Disjunctive Reasoners,6
+Large Language Model,improves,Arithmetic Accuracy,"RCC-8, fine-tuned, Qwen2.5-14B, eq relation",Experimental_Result,5,2503.23487,Large Language and Reasoning Models are Shallow Disjunctive Reasoners,6
+Large Language Model,improves,Arithmetic Accuracy,"IA, fine-tuned, Qwen2.5-14B, oi, m, s, si, fi relations",Experimental_Result,5,2503.23487,Large Language and Reasoning Models are Shallow Disjunctive Reasoners,6
+Chain-of-Thought,reduces,Arithmetic Accuracy,"RCC-8, IA, zero-shot, o3-mini, no perfect results on any relation",Experimental_Result,4,2503.23487,Large Language and Reasoning Models are Shallow Disjunctive Reasoners,6
+Chain-of-Thought,degrades,Arithmetic Accuracy,"CVBench, Llama-4-Scout-17B-16E-Instruct, SceneGraph CoT + PoT",Experimental_Result,5,2507.13362,Enhancing Spatial Reasoning in Vision-Language Models via Chain-of-Thought Prompting and Reinforcement Learning,5
+Chain-of-Thought,degrades,Arithmetic Accuracy,"CVBench, Llama-4-Scout-17B-16E-Instruct, SceneGraph CoT + CoS",Experimental_Result,5,2507.13362,Enhancing Spatial Reasoning in Vision-Language Models via Chain-of-Thought Prompting and Reinforcement Learning,5
+Chain-of-Thought,degrades,Arithmetic Accuracy,"CVBench, Llama-4-Scout-17B-16E-Instruct, SceneGraph CoT + VoT",Experimental_Result,5,2507.13362,Enhancing Spatial Reasoning in Vision-Language Models via Chain-of-Thought Prompting and Reinforcement Learning,5
+Large Language Model,improves,Arithmetic Accuracy,"CVBench, SpaceQwenVL-2.5-3B",Experimental_Result,5,2507.13362,Enhancing Spatial Reasoning in Vision-Language Models via Chain-of-Thought Prompting and Reinforcement Learning,5
+Large Language Model,improves,Arithmetic Accuracy,"CVBench, Pali-gemma2-3B-mix-224-GRPO-v2",Experimental_Result,5,2507.13362,Enhancing Spatial Reasoning in Vision-Language Models via Chain-of-Thought Prompting and Reinforcement Learning,5
+Large Language Model,improves,Arithmetic Accuracy,"CVBench, Pali-gemma2-3B-mix-224-SFT",Experimental_Result,5,2507.13362,Enhancing Spatial Reasoning in Vision-Language Models via Chain-of-Thought Prompting and Reinforcement Learning,5
+Large Language Model,improves,Arithmetic Accuracy,"CVBench, Llama-4-Scout-17B-16E-Instruct + SceneGraph CoT",Experimental_Result,5,2507.13362,Enhancing Spatial Reasoning in Vision-Language Models via Chain-of-Thought Prompting and Reinforcement Learning,5
+Large Language Model,improves,Arithmetic Accuracy,"CVBench, Llama-4-Scout-17B-16E-Instruct + 4-shot CoT Prompting (SG + A split)",Experimental_Result,5,2507.13362,Enhancing Spatial Reasoning in Vision-Language Models via Chain-of-Thought Prompting and Reinforcement Learning,5
+Large Language Model,improves,Arithmetic Accuracy,"CVBench, Llama-4-Scout-17B-16E-Instruct + 4-shot Conversational CoT Prompting",Experimental_Result,5,2507.13362,Enhancing Spatial Reasoning in Vision-Language Models via Chain-of-Thought Prompting and Reinforcement Learning,5
+Large Language Model,improves,Arithmetic Accuracy,"CVBench, Qwen2.5-VL-7B-Instruct + SceneGraph CoT",Experimental_Result,5,2507.13362,Enhancing Spatial Reasoning in Vision-Language Models via Chain-of-Thought Prompting and Reinforcement Learning,5
+Large Language Model,degrades,Arithmetic Accuracy,"CVBench, Pali-gemma2-3B-mix-224 + SceneGraph CoT",Experimental_Result,5,2507.13362,Enhancing Spatial Reasoning in Vision-Language Models via Chain-of-Thought Prompting and Reinforcement Learning,5
+Large Language Model,degrades,Arithmetic Accuracy,"CVBench, Llama-4-Scout-17B-16E-Instruct + SceneGraph CoT + Depth Maps",Experimental_Result,5,2507.13362,Enhancing Spatial Reasoning in Vision-Language Models via Chain-of-Thought Prompting and Reinforcement Learning,5
+Large Language Model,degrades,Arithmetic Accuracy,"CVBench, Llama-4-Scout-17B-16E-Instruct + SceneGraph CoT + Confidence Scores",Experimental_Result,5,2507.13362,Enhancing Spatial Reasoning in Vision-Language Models via Chain-of-Thought Prompting and Reinforcement Learning,5
+Large Language Model,degrades,Arithmetic Accuracy,"CVBench, Llama-4-Scout-17B-16E-Instruct + SceneGraph CoT + VLBA Alignment",Experimental_Result,5,2507.13362,Enhancing Spatial Reasoning in Vision-Language Models via Chain-of-Thought Prompting and Reinforcement Learning,5
+Large Language Model,improves,Arithmetic Accuracy,"CVBench, Pali-gemma2-3B-mix-224-GRPO-v1",Experimental_Result,5,2507.13362,Enhancing Spatial Reasoning in Vision-Language Models via Chain-of-Thought Prompting and Reinforcement Learning,5
+Large Language Model,improves,Arithmetic Accuracy,"CVBench, Pali-gemma2-3B-mix-224-SFT + SceneGraph CoT",Experimental_Result,5,2507.13362,Enhancing Spatial Reasoning in Vision-Language Models via Chain-of-Thought Prompting and Reinforcement Learning,5
+Large Language Model,improves,Arithmetic Accuracy,"CVBench, Qwen2.5-VL-7B-Instruct",Experimental_Result,5,2507.13362,Enhancing Spatial Reasoning in Vision-Language Models via Chain-of-Thought Prompting and Reinforcement Learning,5
+Large Language Model,improves,Arithmetic Accuracy,"CVBench, Llama-4-Scout-17B-16E-Instruct",Experimental_Result,5,2507.13362,Enhancing Spatial Reasoning in Vision-Language Models via Chain-of-Thought Prompting and Reinforcement Learning,5
+Large Language Model,improves,Arithmetic Accuracy,"CVBench, Pali-gemma2-3B-mix-224",Experimental_Result,5,2507.13362,Enhancing Spatial Reasoning in Vision-Language Models via Chain-of-Thought Prompting and Reinforcement Learning,5
+Large Language Model,improves,Arithmetic Accuracy,"CVBench, SpaceQwenVL-2.5-3B, 43.16% margin improvement",Experimental_Result,5,2507.13362,Enhancing Spatial Reasoning in Vision-Language Models via Chain-of-Thought Prompting and Reinforcement Learning,5
+Large Language Model,improves,Step-by-Step Reasoning,"competitive programming benchmark, self-feedback single agent with retrieval framework",Experimental_Result,4,2509.00629,Can Multi-turn Self-refined Single Agent LMs with Retrieval Solve Hard Coding Problems?,4
+Large Language Model,enables,Verification Method,"human-in-the-loop study, targeted guidance",Experimental_Result,5,2509.00629,Can Multi-turn Self-refined Single Agent LMs with Retrieval Solve Hard Coding Problems?,4
+Chain-of-Thought,improves,Arithmetic Accuracy,"Stack Overflow, Gemini-1.5-Pro, GPT-4o, Llama-3.2",Experimental_Result,4,2504.18912,Inferring Questions from Programming Screenshots,4
+Chain-of-Thought,outperforms,Few-Shot Prompting,"Stack Overflow, GPT-4o, Gemini-1.5-Pro",Experimental_Result,5,2504.18912,Inferring Questions from Programming Screenshots,4
+Few-Shot Prompting,degrades,Arithmetic Accuracy,"Stack Overflow, Llama-3.2",Experimental_Result,5,2504.18912,Inferring Questions from Programming Screenshots,4
+Large Language Model,correlates_with,Problem Complexity,"Stack Overflow, GPT-4o, Gemini-1.5-Pro, Llama-3.2",Experimental_Result,3,2504.18912,Inferring Questions from Programming Screenshots,4
+Large Language Model,outperforms,Few-Shot Prompting,"Stack Overflow, GPT-4o, Gemini-1.5-Pro",Experimental_Result,4,2504.18912,Inferring Questions from Programming Screenshots,4
+Large Language Model,improves,Arithmetic Accuracy,"Stack Overflow, GPT-4o, Gemini-1.5-Pro",Experimental_Result,4,2504.18912,Inferring Questions from Programming Screenshots,4
+Large Language Model,degrades,Arithmetic Accuracy,"Stack Overflow, Llama-3.2",Experimental_Result,5,2504.18912,Inferring Questions from Programming Screenshots,4
+Self-Consistency,correlates_with,Problem Complexity,"Stack Overflow, GPT-4o",Experimental_Result,3,2504.18912,Inferring Questions from Programming Screenshots,4
+Verification Method,improves,Arithmetic Accuracy,"Stack Overflow, GPT-4o, Gemini-1.5-Pro",Experimental_Result,4,2504.18912,Inferring Questions from Programming Screenshots,4
+Chain-of-Thought,enables,Step-by-Step Reasoning,"Stack Overflow, GPT-4o, Gemini-1.5-Pro",Experimental_Result,4,2504.18912,Inferring Questions from Programming Screenshots,4
+Large Language Model,reduces,Arithmetic Accuracy,"Stack Overflow, Llama-3.2, Few-Shot Prompting",Experimental_Result,5,2504.18912,Inferring Questions from Programming Screenshots,4
+Large Language Model,increases,Arithmetic Accuracy,"Stack Overflow, GPT-4o, Gemini-1.5-Pro, In-Context Learning",Experimental_Result,4,2504.18912,Inferring Questions from Programming Screenshots,4
+Large Language Model,outperforms,Chain-of-Thought,"Stack Overflow, GPT-4o, In-Context Learning",Experimental_Result,4,2504.18912,Inferring Questions from Programming Screenshots,4
+Large Language Model,equals,Chain-of-Thought,"Stack Overflow, Gemini-1.5-Pro, In-Context Learning",Experimental_Result,4,2504.18912,Inferring Questions from Programming Screenshots,4
+Large Language Model,correlates_with,Problem Complexity,"Stack Overflow, GPT-4o, In-Context Learning",Experimental_Result,3,2504.18912,Inferring Questions from Programming Screenshots,4
+Large Language Model,improves,Arithmetic Accuracy,"Stack Overflow, GPT-4o, In-Context Learning",Experimental_Result,5,2504.18912,Inferring Questions from Programming Screenshots,4
+Large Language Model,degrades,Arithmetic Accuracy,"Stack Overflow, Llama-3.2, Few-Shot Prompting",Experimental_Result,5,2504.18912,Inferring Questions from Programming Screenshots,4
+Large Language Model,correlates_with,Problem Complexity,"Stack Overflow, GPT-4o, Gemini-1.5-Pro, Chain-of-Thought",Experimental_Result,3,2504.18912,Inferring Questions from Programming Screenshots,4
+Large Language Model,improves,Arithmetic Accuracy,"Stack Overflow, GPT-4o, Gemini-1.5-Pro, Chain-of-Thought",Experimental_Result,4,2504.18912,Inferring Questions from Programming Screenshots,4
+Large Language Model,degrades,Arithmetic Accuracy,"Stack Overflow, Llama-3.2, Chain-of-Thought",Experimental_Result,4,2504.18912,Inferring Questions from Programming Screenshots,4
+Chain-of-Thought,improves,Arithmetic Accuracy,"SleepCoT, sleep domain",Experimental_Result,5,2410.16924,SleepCoT: A Lightweight Personalized Sleep Health Model via Chain-of-Thought Distillation,4
+Few-Shot Prompting,improves,Step-by-Step Reasoning,"SleepCoT, sleep domain",Experimental_Result,5,2410.16924,SleepCoT: A Lightweight Personalized Sleep Health Model via Chain-of-Thought Distillation,4
+Large Language Model,outperforms,Few-Shot Prompting,"Qwen-max, sleep domain",Experimental_Result,4,2410.16924,SleepCoT: A Lightweight Personalized Sleep Health Model via Chain-of-Thought Distillation,4
+Chain-of-Thought,enables,Verification Method,"SleepCoT, ablation study",Experimental_Result,5,2410.16924,SleepCoT: A Lightweight Personalized Sleep Health Model via Chain-of-Thought Distillation,4
+Few-Shot Prompting,correlates_with,Problem Complexity,"SleepCoT, 0.5B vs 1.5B models",Experimental_Result,4,2410.16924,SleepCoT: A Lightweight Personalized Sleep Health Model via Chain-of-Thought Distillation,4
+Large Language Model,reduces,Arithmetic Accuracy,"SleepCoT-0.5B, sleep domain",Experimental_Result,4,2410.16924,SleepCoT: A Lightweight Personalized Sleep Health Model via Chain-of-Thought Distillation,4
+Chain-of-Thought,increases,Self-Consistency,"SleepCoT, personalized data increase",Experimental_Result,4,2410.16924,SleepCoT: A Lightweight Personalized Sleep Health Model via Chain-of-Thought Distillation,4
+Few-Shot Prompting,outperforms,Zero-Shot Prompting,"SleepCoT, ablation experiment",Experimental_Result,5,2410.16924,SleepCoT: A Lightweight Personalized Sleep Health Model via Chain-of-Thought Distillation,4
+Chain-of-Thought,depends_on,Problem Complexity,"SleepCoT, data quality",Theoretical_Analysis,3,2410.16924,SleepCoT: A Lightweight Personalized Sleep Health Model via Chain-of-Thought Distillation,4
+Large Language Model,improves,Arithmetic Accuracy,"SleepCoT-1.5B, sleep domain",Experimental_Result,5,2410.16924,SleepCoT: A Lightweight Personalized Sleep Health Model via Chain-of-Thought Distillation,4
+Chain-of-Thought,improves,Arithmetic Accuracy,"GPQA, Qwen2.5-7B",Experimental_Result,4,2601.03649,SyncThink: A Training-Free Strategy to Align Inference Termination with Reasoning Saturation,3
+Chain-of-Thought,reduces,Step-by-Step Reasoning,"SyncThink, Qwen2.5-7B",Experimental_Result,5,2601.03649,SyncThink: A Training-Free Strategy to Align Inference Termination with Reasoning Saturation,3
+Chain-of-Thought,equals,Arithmetic Accuracy,"average benchmark, SyncThink vs Full Reasoning",Experimental_Result,5,2601.03649,SyncThink: A Training-Free Strategy to Align Inference Termination with Reasoning Saturation,3
+Chain-of-Thought,reduces,Step-by-Step Reasoning,"average benchmark, SyncThink vs Full Reasoning",Experimental_Result,5,2601.03649,SyncThink: A Training-Free Strategy to Align Inference Termination with Reasoning Saturation,3
+Chain-of-Thought,improves,Arithmetic Accuracy,"GPQA, Qwen2.5-7B, SyncThink vs Full Reasoning",Experimental_Result,5,2601.03649,SyncThink: A Training-Free Strategy to Align Inference Termination with Reasoning Saturation,3
+Chain-of-Thought,improves,Arithmetic Accuracy,"GPQA, Qwen2.5-7B, SyncThink vs No Reasoning",Experimental_Result,5,2601.03649,SyncThink: A Training-Free Strategy to Align Inference Termination with Reasoning Saturation,3
+Chain-of-Thought,improves,Arithmetic Accuracy,"MGSM, Qwen Instruct, COT-STRUCT",Experimental_Result,5,2511.15886,What Really Counts? Examining Step and Token Level Attribution in Multilingual CoT Reasoning,1
+Chain-of-Thought,improves,Arithmetic Accuracy,"MGSM, Qwen Instruct, all languages",Experimental_Result,5,2511.15886,What Really Counts? Examining Step and Token Level Attribution in Multilingual CoT Reasoning,1
+Large Language Model,outperforms,Few-Shot Prompting,"MGSM, English, Qwen Instruct",Experimental_Result,5,2511.15886,What Really Counts? Examining Step and Token Level Attribution in Multilingual CoT Reasoning,1
+Arithmetic Accuracy,correlates_with,Language,"MGSM, Qwen Instruct, COT-STRUCT",Experimental_Result,5,2511.15886,What Really Counts? Examining Step and Token Level Attribution in Multilingual CoT Reasoning,1
+Step-by-Step Reasoning,increases,Arithmetic Accuracy,"MGSM, Qwen Instruct, COT-STRUCT",Experimental_Result,5,2511.15886,What Really Counts? Examining Step and Token Level Attribution in Multilingual CoT Reasoning,1
+Self-Consistency,correlates_with,Step-by-Step Reasoning,"MGSM, Qwen Instruct, Bengali",Experimental_Result,4,2511.15886,What Really Counts? Examining Step and Token Level Attribution in Multilingual CoT Reasoning,1
+Large Language Model,degrades,Arithmetic Accuracy,"MGSM, Qwen Instruct, Bengali",Experimental_Result,5,2511.15886,What Really Counts? Examining Step and Token Level Attribution in Multilingual CoT Reasoning,1
+Verification Method,correlates_with,Step-by-Step Reasoning,"MGSM, Qwen Instruct, ContextCite",Experimental_Result,4,2511.15886,What Really Counts? Examining Step and Token Level Attribution in Multilingual CoT Reasoning,1
+Step-by-Step Reasoning,correlates_with,Arithmetic Accuracy,"MGSM, Qwen Instruct, final reasoning step",Experimental_Result,4,2511.15886,What Really Counts? Examining Step and Token Level Attribution in Multilingual CoT Reasoning,1
+Large Language Model,degrades,Structured Generation Compliance,"MGSM, Qwen Instruct, English",Experimental_Result,4,2511.15886,What Really Counts? Examining Step and Token Level Attribution in Multilingual CoT Reasoning,1
+Large Language Model,improves,Structured Generation Compliance,"MGSM, Qwen Instruct, Chinese",Experimental_Result,4,2511.15886,What Really Counts? Examining Step and Token Level Attribution in Multilingual CoT Reasoning,1
+Large Language Model,improves,Structured Generation Compliance,"MGSM, Qwen Instruct, French",Experimental_Result,4,2511.15886,What Really Counts? Examining Step and Token Level Attribution in Multilingual CoT Reasoning,1
+Large Language Model,degrades,Structured Generation Compliance,"MGSM, Qwen Instruct, Bengali",Experimental_Result,4,2511.15886,What Really Counts? Examining Step and Token Level Attribution in Multilingual CoT Reasoning,1
+Large Language Model,degrades,Structured Generation Compliance,"MGSM, Qwen Instruct, German",Experimental_Result,4,2511.15886,What Really Counts? Examining Step and Token Level Attribution in Multilingual CoT Reasoning,1
+Step-by-Step Reasoning,correlates_with,Arithmetic Accuracy,"MGSM, Qwen Instruct, incorrect predictions, English",Experimental_Result,4,2511.15886,What Really Counts? Examining Step and Token Level Attribution in Multilingual CoT Reasoning,1
+Step-by-Step Reasoning,correlates_with,Arithmetic Accuracy,"MGSM, Qwen Instruct, incorrect predictions, Bengali",Experimental_Result,4,2511.15886,What Really Counts? Examining Step and Token Level Attribution in Multilingual CoT Reasoning,1
+Step-by-Step Reasoning,correlates_with,Arithmetic Accuracy,"MGSM, Qwen Instruct, incorrect predictions, German",Experimental_Result,4,2511.15886,What Really Counts? Examining Step and Token Level Attribution in Multilingual CoT Reasoning,1
+Step-by-Step Reasoning,equals,Arithmetic Accuracy,"MGSM, Qwen Instruct, correct and incorrect predictions, French",Experimental_Result,4,2511.15886,What Really Counts? Examining Step and Token Level Attribution in Multilingual CoT Reasoning,1
+Step-by-Step Reasoning,equals,Arithmetic Accuracy,"MGSM, Qwen Instruct, correct and incorrect predictions, Chinese",Experimental_Result,4,2511.15886,What Really Counts? Examining Step and Token Level Attribution in Multilingual CoT Reasoning,1
+Large Language Model,degrades,Arithmetic Accuracy,"MGSM, Qwen Instruct, Bengali, COT-STRUCT",Experimental_Result,5,2511.15886,What Really Counts? Examining Step and Token Level Attribution in Multilingual CoT Reasoning,1
+Goal Reversal,improves,Arithmetic Accuracy,"JudgeBench, GPT-4o",Experimental_Result,5,2503.06139,GRP: Goal-Reversed Prompting for Zero-Shot Evaluation with LLMs,1
+Goal Reversal,improves,Arithmetic Accuracy,"JudgeBench, Gemini-1.5-Pro",Experimental_Result,5,2503.06139,GRP: Goal-Reversed Prompting for Zero-Shot Evaluation with LLMs,1
+Goal Reversal,improves,Arithmetic Accuracy,"JudgeBench, Claude-3.5-Sonnet",Experimental_Result,5,2503.06139,GRP: Goal-Reversed Prompting for Zero-Shot Evaluation with LLMs,1
+Goal Reversal,improves,Mathematical Reasoning,"JudgeBench, GPT-4o",Experimental_Result,5,2503.06139,GRP: Goal-Reversed Prompting for Zero-Shot Evaluation with LLMs,1
+Goal Reversal,improves,Mathematical Reasoning,"JudgeBench, Gemini-1.5-Pro",Experimental_Result,5,2503.06139,GRP: Goal-Reversed Prompting for Zero-Shot Evaluation with LLMs,1
+Goal Reversal,improves,Mathematical Reasoning,"JudgeBench, Claude-3.5-Sonnet",Experimental_Result,5,2503.06139,GRP: Goal-Reversed Prompting for Zero-Shot Evaluation with LLMs,1
+Goal Reversal,improves,Arithmetic Accuracy,"JudgeBench, response-pair generator Claude-3.5-Sonnet",Experimental_Result,4,2503.06139,GRP: Goal-Reversed Prompting for Zero-Shot Evaluation with LLMs,1
+Goal Reversal,improves,Arithmetic Accuracy,"JudgeBench, minimal direct-prompting template",Experimental_Result,4,2503.06139,GRP: Goal-Reversed Prompting for Zero-Shot Evaluation with LLMs,1
+Goal Reversal,improves,Mathematical Reasoning,"JudgeBench, response-pair generator Claude-3.5-Sonnet",Experimental_Result,4,2503.06139,GRP: Goal-Reversed Prompting for Zero-Shot Evaluation with LLMs,1
+Goal Reversal,improves,Mathematical Reasoning,"JudgeBench, minimal direct-prompting template",Experimental_Result,4,2503.06139,GRP: Goal-Reversed Prompting for Zero-Shot Evaluation with LLMs,1
+Goal Reversal,correlates_with,Problem Complexity,"JudgeBench, Reasoning and Mathematics categories",Experimental_Result,4,2503.06139,GRP: Goal-Reversed Prompting for Zero-Shot Evaluation with LLMs,1
+Goal Reversal,improves,Arithmetic Accuracy,"JudgeBench, stronger judges (GPT-4o, Gemini-1.5-Pro, Claude-3.5-Sonnet)",Experimental_Result,4,2503.06139,GRP: Goal-Reversed Prompting for Zero-Shot Evaluation with LLMs,1
+Goal Reversal,improves,Mathematical Reasoning,"JudgeBench, stronger judges (GPT-4o, Gemini-1.5-Pro, Claude-3.5-Sonnet)",Experimental_Result,4,2503.06139,GRP: Goal-Reversed Prompting for Zero-Shot Evaluation with LLMs,1
+Goal Reversal,enables,Step-by-Step Reasoning,"JudgeBench, chain-of-thought prompt template",Experimental_Result,5,2503.06139,GRP: Goal-Reversed Prompting for Zero-Shot Evaluation with LLMs,1
+Goal Reversal,reduces,Verification Method,"JudgeBench, order-inconsistent verdicts",Experimental_Result,4,2503.06139,GRP: Goal-Reversed Prompting for Zero-Shot Evaluation with LLMs,1
+Chain-of-Thought,improves,Arithmetic Accuracy,"System-2 benchmarks, Qwen model",Experimental_Result,4,2508.18743,CAC-CoT: Connector-Aware Compact Chain-of-Thought for Efficient Reasoning Data Synthesis Across Dual-System Cognitive Tasks,1
+Chain-of-Thought,reduces,Step-by-Step Reasoning,"System-2 tasks, compactness constraint",Experimental_Result,4,2508.18743,CAC-CoT: Connector-Aware Compact Chain-of-Thought for Efficient Reasoning Data Synthesis Across Dual-System Cognitive Tasks,1
+Chain-of-Thought,outperforms,Few-Shot Prompting,"System-1 and System-2 benchmarks, Qwen2.5-7B-Instruct",Experimental_Result,4,2508.18743,CAC-CoT: Connector-Aware Compact Chain-of-Thought for Efficient Reasoning Data Synthesis Across Dual-System Cognitive Tasks,1
+Verification Method,improves,Arithmetic Accuracy,"System-2 tasks, connector-aware prompting",Experimental_Result,3,2508.18743,CAC-CoT: Connector-Aware Compact Chain-of-Thought for Efficient Reasoning Data Synthesis Across Dual-System Cognitive Tasks,1
+Problem Complexity,correlates_with,Step-by-Step Reasoning,"System-2 tasks, incorrect cases",Experimental_Result,3,2508.18743,CAC-CoT: Connector-Aware Compact Chain-of-Thought for Efficient Reasoning Data Synthesis Across Dual-System Cognitive Tasks,1
+Chain-of-Thought,improves,Mathematical Reasoning,"SOMADHAN, PatiGonit, 1000 samples",Experimental_Result,4,2505.21354,Leveraging Large Language Models for Bengali Math Word Problem Solving with Chain of Thought Reasoning,1
+Large Language Model,degrades,Mathematical Reasoning,"Llama-3 (8B), Bengali MWPs",Experimental_Result,4,2505.21354,Leveraging Large Language Models for Bengali Math Word Problem Solving with Chain of Thought Reasoning,1
+Self-Consistency,improves,Chain-of-Thought,"MMLU, GPT-4o",Experimental_Result,5,2604.19395,Does Self-Consistency Improve the Recall of Encyclopedic Knowledge?,0
+Self-Consistency,improves,Arithmetic Accuracy,"GSM8K, GPT-4o",Experimental_Result,4,2604.19395,Does Self-Consistency Improve the Recall of Encyclopedic Knowledge?,0
+Self-Consistency,improves,Step-by-Step Reasoning,"MMLU, GPT-4o",Experimental_Result,5,2604.19395,Does Self-Consistency Improve the Recall of Encyclopedic Knowledge?,0
+Self-Consistency,improves,Knowledge Recall,"MMLU, GPT-4o",Experimental_Result,5,2604.19395,Does Self-Consistency Improve the Recall of Encyclopedic Knowledge?,0
+Self-Consistency,outperforms,Chain-of-Thought,"MMLU, GPT-4o",Experimental_Result,5,2604.19395,Does Self-Consistency Improve the Recall of Encyclopedic Knowledge?,0
+Self-Consistency,increases,Arithmetic Accuracy,"MMLU, GPT-4o",Experimental_Result,5,2604.19395,Does Self-Consistency Improve the Recall of Encyclopedic Knowledge?,0
+Self-Consistency,reduces,Runtime Efficiency,GPT-4o,Experimental_Result,3,2604.19395,Does Self-Consistency Improve the Recall of Encyclopedic Knowledge?,0
+Self-Consistency,increases,Cost,GPT-4o,Experimental_Result,3,2604.19395,Does Self-Consistency Improve the Recall of Encyclopedic Knowledge?,0
+Self-Consistency,improves,Arithmetic Accuracy,"GSM8K, GPT-4o",Experimental_Result,4,2604.19395,Does Self-Consistency Improve the Recall of Encyclopedic Knowledge?,0
+Self-Consistency,improves,Arithmetic Accuracy,"MedMCQA, GPT-4o",Experimental_Result,4,2604.19395,Does Self-Consistency Improve the Recall of Encyclopedic Knowledge?,0
+Self-Consistency,improves,Arithmetic Accuracy,"MMLU, Qwen2.5-32B-Instruct",Experimental_Result,4,2604.19395,Does Self-Consistency Improve the Recall of Encyclopedic Knowledge?,0
+Self-Consistency,improves,Knowledge Recall,"MMLU, Qwen2.5-32B-Instruct",Experimental_Result,4,2604.19395,Does Self-Consistency Improve the Recall of Encyclopedic Knowledge?,0
+Self-Consistency,improves,Step-by-Step Reasoning,"MMLU, Qwen2.5-32B-Instruct",Experimental_Result,4,2604.19395,Does Self-Consistency Improve the Recall of Encyclopedic Knowledge?,0
+Self-Consistency,improves,Arithmetic Accuracy,"GSM8K, Qwen2.5-32B-Instruct",Experimental_Result,4,2604.19395,Does Self-Consistency Improve the Recall of Encyclopedic Knowledge?,0
+Self-Consistency,improves,Arithmetic Accuracy,"MedMCQA, Qwen2.5-32B-Instruct",Experimental_Result,4,2604.19395,Does Self-Consistency Improve the Recall of Encyclopedic Knowledge?,0
+Self-Consistency,improves,Arithmetic Accuracy,"MMLU, GPT-4o",Experimental_Result,5,2604.19395,Does Self-Consistency Improve the Recall of Encyclopedic Knowledge?,0
+Self-Consistency,improves,Knowledge Recall,"MMLU, GPT-4o",Experimental_Result,5,2604.19395,Does Self-Consistency Improve the Recall of Encyclopedic Knowledge?,0
+Self-Consistency,improves,Step-by-Step Reasoning,"MMLU, GPT-4o",Experimental_Result,5,2604.19395,Does Self-Consistency Improve the Recall of Encyclopedic Knowledge?,0
+Self-Consistency,improves,Arithmetic Accuracy,"GSM8K, GPT-4o",Experimental_Result,4,2604.19395,Does Self-Consistency Improve the Recall of Encyclopedic Knowledge?,0
+Self-Consistency,improves,Arithmetic Accuracy,"MedMCQA, GPT-4o",Experimental_Result,4,2604.19395,Does Self-Consistency Improve the Recall of Encyclopedic Knowledge?,0
+Vis-CoT,improves,Arithmetic Accuracy,"GSM8K, Vis-CoT framework",Experimental_Result,5,2509.01412,Vis-CoT: A Human-in-the-Loop Framework for Interactive Visualization and Intervention in LLM Chain-of-Thought Reasoning,0
+Vis-CoT,outperforms,Standard CoT,"GSM8K, Vis-CoT framework",Experimental_Result,5,2509.01412,Vis-CoT: A Human-in-the-Loop Framework for Interactive Visualization and Intervention in LLM Chain-of-Thought Reasoning,0
+Vis-CoT,improves,Arithmetic Accuracy,"StrategyQA, Vis-CoT framework",Experimental_Result,5,2509.01412,Vis-CoT: A Human-in-the-Loop Framework for Interactive Visualization and Intervention in LLM Chain-of-Thought Reasoning,0
+Vis-CoT,outperforms,Standard CoT,"StrategyQA, Vis-CoT framework",Experimental_Result,5,2509.01412,Vis-CoT: A Human-in-the-Loop Framework for Interactive Visualization and Intervention in LLM Chain-of-Thought Reasoning,0
+Vis-CoT,improves,Arithmetic Accuracy,"Custom Multi-Step Planning Task, Vis-CoT framework",Experimental_Result,5,2509.01412,Vis-CoT: A Human-in-the-Loop Framework for Interactive Visualization and Intervention in LLM Chain-of-Thought Reasoning,0
+Vis-CoT,outperforms,Zero-Shot Prompting,"Custom Multi-Step Planning Task, Vis-CoT framework",Experimental_Result,5,2509.01412,Vis-CoT: A Human-in-the-Loop Framework for Interactive Visualization and Intervention in LLM Chain-of-Thought Reasoning,0
+Vis-CoT,outperforms,Standard CoT,"Custom Multi-Step Planning Task, Vis-CoT framework",Experimental_Result,5,2509.01412,Vis-CoT: A Human-in-the-Loop Framework for Interactive Visualization and Intervention in LLM Chain-of-Thought Reasoning,0
+Vis-CoT,reduces,average task completion time,"All tasks, Vis-CoT framework",Experimental_Result,4,2509.01412,Vis-CoT: A Human-in-the-Loop Framework for Interactive Visualization and Intervention in LLM Chain-of-Thought Reasoning,0
+Vis-CoT,improves,System Usability Scale,"User study, Vis-CoT framework",Experimental_Result,5,2509.01412,Vis-CoT: A Human-in-the-Loop Framework for Interactive Visualization and Intervention in LLM Chain-of-Thought Reasoning,0
+Vis-CoT,outperforms,Standard CoT,"System Usability Scale, user study",Experimental_Result,5,2509.01412,Vis-CoT: A Human-in-the-Loop Framework for Interactive Visualization and Intervention in LLM Chain-of-Thought Reasoning,0
+Vis-CoT,improves,Trust in AI,"User study, Vis-CoT framework",Experimental_Result,5,2509.01412,Vis-CoT: A Human-in-the-Loop Framework for Interactive Visualization and Intervention in LLM Chain-of-Thought Reasoning,0
+Vis-CoT,outperforms,Standard CoT,"Trust in AI scale, user study",Experimental_Result,5,2509.01412,Vis-CoT: A Human-in-the-Loop Framework for Interactive Visualization and Intervention in LLM Chain-of-Thought Reasoning,0
+Vis-CoT,enables,targeted error correction,"GSM8K, Vis-CoT framework",Experimental_Result,5,2509.01412,Vis-CoT: A Human-in-the-Loop Framework for Interactive Visualization and Intervention in LLM Chain-of-Thought Reasoning,0
+Vis-CoT,enables,pruning of fallacious reasoning,"StrategyQA, Vis-CoT framework",Experimental_Result,4,2509.01412,Vis-CoT: A Human-in-the-Loop Framework for Interactive Visualization and Intervention in LLM Chain-of-Thought Reasoning,0
+Vis-CoT,enables,global graph view for complex planning,"Custom Multi-Step Planning Task, Vis-CoT framework",Experimental_Result,4,2509.01412,Vis-CoT: A Human-in-the-Loop Framework for Interactive Visualization and Intervention in LLM Chain-of-Thought Reasoning,0
+Vis-CoT,reduces,number of full regenerations,"All tasks, Vis-CoT framework",Experimental_Result,4,2509.01412,Vis-CoT: A Human-in-the-Loop Framework for Interactive Visualization and Intervention in LLM Chain-of-Thought Reasoning,0
+Vis-CoT,increases,user sense of agency,"User study, Vis-CoT framework",Experimental_Result,4,2509.01412,Vis-CoT: A Human-in-the-Loop Framework for Interactive Visualization and Intervention in LLM Chain-of-Thought Reasoning,0
+Vis-CoT,increases,user confidence in final answers,"User study, Vis-CoT framework",Experimental_Result,4,2509.01412,Vis-CoT: A Human-in-the-Loop Framework for Interactive Visualization and Intervention in LLM Chain-of-Thought Reasoning,0
+Vis-CoT,enables,rapid correction of reasoning errors,"GSM8K case study, Vis-CoT framework",Experimental_Result,5,2509.01412,Vis-CoT: A Human-in-the-Loop Framework for Interactive Visualization and Intervention in LLM Chain-of-Thought Reasoning,0
+Vis-CoT,outperforms,Standard CoT,"All datasets, Vis-CoT framework",Experimental_Result,5,2509.01412,Vis-CoT: A Human-in-the-Loop Framework for Interactive Visualization and Intervention in LLM Chain-of-Thought Reasoning,0
+FOR-Prompting,improves,Step-by-Step Reasoning,"unspecified dataset, unspecified model",Experimental_Result,4,2510.01674,FOR-Prompting: From Objection to Revision via an Asymmetric Prompting Protocol,0
+FOR-Prompting,enables,Large Language Model,"unspecified model, on-device deployments",Experimental_Result,4,2510.01674,FOR-Prompting: From Objection to Revision via an Asymmetric Prompting Protocol,0
+Chain-of-Thought,improves,Arithmetic Accuracy,"GSM8K, GPT-3.5",Literature_Citation,5,2511.23253,AgriCoT: A Chain-of-Thought Benchmark for Evaluating Reasoning in Vision-Language Models for Agriculture,0
+Chain-of-Thought,improves,Step-by-Step Reasoning,ScienceQA,Literature_Citation,4,2511.23253,AgriCoT: A Chain-of-Thought Benchmark for Evaluating Reasoning in Vision-Language Models for Agriculture,0
+Self-Consistency,improves,Arithmetic Accuracy,GSM8K,Literature_Citation,4,2511.23253,AgriCoT: A Chain-of-Thought Benchmark for Evaluating Reasoning in Vision-Language Models for Agriculture,0
+Chain-of-Thought,enables,Step-by-Step Reasoning,multimodal settings,Literature_Citation,4,2511.23253,AgriCoT: A Chain-of-Thought Benchmark for Evaluating Reasoning in Vision-Language Models for Agriculture,0
+Large Language Model,outperforms,Few-Shot Prompting,"arithmetic, commonsense, logic tasks",Literature_Citation,4,2511.23253,AgriCoT: A Chain-of-Thought Benchmark for Evaluating Reasoning in Vision-Language Models for Agriculture,0
+Causal graphs,improves,Arithmetic Accuracy,"TORQUESTRA, T5, QwQ, GPT",Experimental_Result,4,2510.01391,TAG-EQA: Text-And-Graph for Event Question Answering via Structured Prompting Strategies,0
+Chain-of-Thought,improves,Arithmetic Accuracy,"TAG configuration, QwQ",Experimental_Result,4,2510.01391,TAG-EQA: Text-And-Graph for Event Question Answering via Structured Prompting Strategies,0
+QwQ,outperforms,T5,"TAG+CoT, TORQUESTRA",Experimental_Result,4,2510.01391,TAG-EQA: Text-And-Graph for Event Question Answering via Structured Prompting Strategies,0
+T5,outperforms,QwQ,"Few+Text, TORQUESTRA",Experimental_Result,4,2510.01391,TAG-EQA: Text-And-Graph for Event Question Answering via Structured Prompting Strategies,0
+Chain-of-Thought,improves,Arithmetic Accuracy,"GPT models, Small subset",Experimental_Result,3,2510.01391,TAG-EQA: Text-And-Graph for Event Question Answering via Structured Prompting Strategies,0
+Few-Shot Prompting,improves,Arithmetic Accuracy,"T5, Text modality, TORQUESTRA",Experimental_Result,4,2510.01391,TAG-EQA: Text-And-Graph for Event Question Answering via Structured Prompting Strategies,0
+Causal graphs,improves,Arithmetic Accuracy,"relational categories (causal, past, temporal_conflict)",Experimental_Result,4,2510.01391,TAG-EQA: Text-And-Graph for Event Question Answering via Structured Prompting Strategies,0
+Chain-of-Thought,improves,Arithmetic Accuracy,"Graph modality, QwQ, structured types",Experimental_Result,4,2510.01391,TAG-EQA: Text-And-Graph for Event Question Answering via Structured Prompting Strategies,0
+Few-Shot Prompting,improves,Arithmetic Accuracy,"Text modality, QwQ, non-structured types",Experimental_Result,3,2510.01391,TAG-EQA: Text-And-Graph for Event Question Answering via Structured Prompting Strategies,0
+Chain-of-Thought,improves,Arithmetic Accuracy,"Graph modality, GPT, relational categories",Experimental_Result,3,2510.01391,TAG-EQA: Text-And-Graph for Event Question Answering via Structured Prompting Strategies,0
+Causal graphs,reduces,Arithmetic Accuracy,"T5, TAG configuration",Experimental_Result,4,2510.01391,TAG-EQA: Text-And-Graph for Event Question Answering via Structured Prompting Strategies,0
+Chain-of-Thought,degrades,Arithmetic Accuracy,"T5, TAG configuration",Experimental_Result,4,2510.01391,TAG-EQA: Text-And-Graph for Event Question Answering via Structured Prompting Strategies,0
+Causal graphs,improves,Arithmetic Accuracy,"QwQ, TAG+CoT",Experimental_Result,4,2510.01391,TAG-EQA: Text-And-Graph for Event Question Answering via Structured Prompting Strategies,0
+Causal graphs,improves,Arithmetic Accuracy,"QwQ, TAG+Few",Experimental_Result,4,2510.01391,TAG-EQA: Text-And-Graph for Event Question Answering via Structured Prompting Strategies,0
+Chain-of-Thought,improves,Arithmetic Accuracy,"QwQ, TAG configuration",Experimental_Result,4,2510.01391,TAG-EQA: Text-And-Graph for Event Question Answering via Structured Prompting Strategies,0
+Few-Shot Prompting,improves,Arithmetic Accuracy,"T5, Text modality",Experimental_Result,4,2510.01391,TAG-EQA: Text-And-Graph for Event Question Answering via Structured Prompting Strategies,0
+Causal graphs,improves,Arithmetic Accuracy,"QwQ, Graph+CoT, structured types",Experimental_Result,4,2510.01391,TAG-EQA: Text-And-Graph for Event Question Answering via Structured Prompting Strategies,0
+Few-Shot Prompting,improves,Arithmetic Accuracy,"QwQ, Text modality, non-structured types",Experimental_Result,3,2510.01391,TAG-EQA: Text-And-Graph for Event Question Answering via Structured Prompting Strategies,0
+Chain-of-Thought,improves,Arithmetic Accuracy,"GPT, Graph modality, relational categories",Experimental_Result,3,2510.01391,TAG-EQA: Text-And-Graph for Event Question Answering via Structured Prompting Strategies,0
+Causal graphs,improves,Arithmetic Accuracy,"event-centric questions, relational categories",Experimental_Result,4,2510.01391,TAG-EQA: Text-And-Graph for Event Question Answering via Structured Prompting Strategies,0
+Chain-of-Thought,improves,Mathematical Reasoning,"KGA-ECoT framework, multiple datasets, various LLMs",Experimental_Result,5,2508.04072,KG-Augmented Executable CoT for Mathematical Coding,0
+Chain-of-Thought,outperforms,Few-Shot Prompting,"KGA-ECoT, multiple mathematical reasoning datasets",Experimental_Result,5,2508.04072,KG-Augmented Executable CoT for Mathematical Coding,0
+Chain-of-Thought,outperforms,code-based reasoning methods,"KGA-ECoT, multiple mathematical reasoning datasets",Experimental_Result,5,2508.04072,KG-Augmented Executable CoT for Mathematical Coding,0
+GraphRAG,improves,code executability,"KGA-ECoT, ablation analysis",Experimental_Result,5,2508.04072,KG-Augmented Executable CoT for Mathematical Coding,0
+GraphRAG,improves,domain knowledge integration,"KGA-ECoT, ablation analysis",Experimental_Result,5,2508.04072,KG-Augmented Executable CoT for Mathematical Coding,0
+Verification Method,improves,computational precision,"KGA-ECoT, external code execution mechanism",Experimental_Result,5,2508.04072,KG-Augmented Executable CoT for Mathematical Coding,0
+Verification Method,improves,answer verifiability,"KGA-ECoT, external code execution mechanism",Experimental_Result,5,2508.04072,KG-Augmented Executable CoT for Mathematical Coding,0
+FLEx,improves,Mathematical Reasoning,"diverse benchmarks, multiple model scales",Experimental_Result,5,2601.04157,FLEx: Language Modeling with Few-shot Language Explanations,0
