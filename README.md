@@ -1,11 +1,11 @@
+# Scientific Contradiction Detection System
+
 <p align="center">
   <img src="https://img.shields.io/badge/domain-CoT%20Math%20Reasoning-blue.svg"/>
   <img src="https://img.shields.io/badge/papers-200-blueviolet.svg"/>
   <img src="https://img.shields.io/badge/contradictions-165%20found-orange.svg"/>
   <img src="https://img.shields.io/badge/license-MIT-green.svg"/>
 </p>
-
-# Scientific Contradiction Detection System
 
 **An automated disagreement detector for the scientific record.**
 
