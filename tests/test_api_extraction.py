@@ -1,6 +1,6 @@
 """Quick test of DeepSeek API claim extraction on a single paper."""
 import sys
-sys.path.insert(0, "src")
+sys.path.insert(0, "../src")
 
 from llm_client import LLMClient
 from claim_extractor import ClaimExtractor

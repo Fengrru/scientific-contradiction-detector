@@ -12,7 +12,7 @@ import pandas as pd
 from pathlib import Path
 
 # Add src to path
-sys.path.append(os.path.join(os.path.dirname(__file__), "src"))
+sys.path.append(os.path.join(os.path.dirname(__file__), "../src"))
 
 def test_ontology():
     """Test ontology module."""

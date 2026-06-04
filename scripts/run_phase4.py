@@ -1,6 +1,6 @@
 """Run Phase 4: Paper generation."""
 import sys
-sys.path.insert(0, "src")
+sys.path.insert(0, "../src")
 
 import pandas as pd
 import os

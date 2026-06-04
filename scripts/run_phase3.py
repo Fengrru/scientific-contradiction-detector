@@ -1,6 +1,6 @@
 """Run Phase 3: Contradiction detection on cleaned claims."""
 import sys
-sys.path.insert(0, "src")
+sys.path.insert(0, "../src")
 
 import pandas as pd
 import os

@@ -1,6 +1,6 @@
 """Run Phase 2: Claim extraction with DeepSeek API on specified number of papers."""
 import sys
-sys.path.insert(0, "src")
+sys.path.insert(0, "../src")
 
 import pandas as pd
 import time

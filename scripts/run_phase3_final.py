@@ -1,6 +1,6 @@
 """Quick Phase 3: finish classification + generate paper."""
 import sys, os
-sys.path.insert(0, "src")
+sys.path.insert(0, "../src")
 import pandas as pd
 from contradiction_detector import ContradictionDetector, manual_verification_sample
 from rule_engine import RuleEngine, replace_llm_with_rules

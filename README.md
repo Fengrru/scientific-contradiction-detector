@@ -145,7 +145,7 @@ This system currently does not attempt to provide:
 - **Resolution or adjudication** — identifies disagreements but does not resolve them
 - **Real-time monitoring** — designed for batch analysis, not live feeds
 - **General extraction** — ontology is domain-specific by design
-- **Windows local LLM** — 4-bit quantization via `bitsandbytes` is Linux/macOS only; Windows users should use the DeepSeek API path (`run_full_pipeline.py`)
+- **Windows local LLM** — 4-bit quantization via `bitsandbytes` is Linux/macOS only; Windows users should use the DeepSeek API path (`scripts/run_full_pipeline.py`)
 
 ---
 
@@ -192,6 +192,30 @@ src/                          # Pipeline modules
 ├── paper_generator.py        # LaTeX paper generation
 ├── app.py                    # Streamlit web interface
 └── main.py                   # CLI entry point
+
+scripts/                      # Run scripts & utilities
+├── run_full_pipeline.py      # Full pipeline runner
+├── run_phase2.py             # Phase 2: claim extraction
+├── run_phase2_batch.py       # Phase 2: batch extraction
+├── run_phase3.py             # Phase 3: contradiction detection
+├── run_phase3_final.py       # Phase 3: final classification
+├── run_phase4.py             # Phase 4: paper generation
+├── pipeline_full_rerun.py    # Full pipeline re-run
+├── fetch_relevant_papers.py  # Fetch papers via API
+├── process_relevant_papers.py# Process downloaded papers
+├── check_and_clean.py        # Data cleaning utility
+└── quick_test.py             # Quick pipeline test
+
+tests/                        # Module tests
+├── test_modules.py           # Component integration tests
+└── test_api_extraction.py    # DeepSeek API extraction test
+
+data/                         # Datasets (CSV)
+screenshots/                  # README screenshots
+papers/                       # LaTeX paper source & PDFs
+templates/latex/              # LaTeX templates
+docs/                         # Documentation
+│   └── plan.md               # Project plan (Chinese)
 ```
 
 ---

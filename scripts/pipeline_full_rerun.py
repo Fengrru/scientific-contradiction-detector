@@ -3,7 +3,7 @@ Full pipeline re-run with fixes.
 Uses existing 42 relevant papers + merges with 200-paper text dataset.
 """
 import sys, os, time
-sys.path.insert(0, "src")
+sys.path.insert(0, "../src")
 import pandas as pd
 import requests
 from tqdm import tqdm

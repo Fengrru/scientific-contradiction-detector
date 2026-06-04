@@ -1,5 +1,5 @@
 import sys
-sys.path.insert(0, "src")
+sys.path.insert(0, "../src")
 import pandas as pd
 from data_cleaner import DataCleaner
 from ontology import ONTOLOGY

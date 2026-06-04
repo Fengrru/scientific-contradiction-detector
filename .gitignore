@@ -32,6 +32,9 @@ build/
 papers/pdfs/*.pdf
 papers/contradiction_paper.pdf
 
+# Script outputs (auto-generated)
+results/
+
 # Test artifacts
 papers/test/
 

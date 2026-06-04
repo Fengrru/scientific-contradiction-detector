@@ -2,7 +2,7 @@
 Scaled-up Phase 2: Extract claims from 50 domain-relevant papers using DeepSeek API.
 """
 import sys
-sys.path.insert(0, "src")
+sys.path.insert(0, "../src")
 
 import pandas as pd
 import os

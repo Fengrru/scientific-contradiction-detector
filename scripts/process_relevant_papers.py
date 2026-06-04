@@ -3,7 +3,7 @@ Download PDFs and extract text for truly relevant CoT papers.
 Then extract claims and detect contradictions.
 """
 import sys
-sys.path.insert(0, "src")
+sys.path.insert(0, "../src")
 
 import pandas as pd
 import os

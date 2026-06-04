@@ -8,7 +8,7 @@ Date: 2026-04-20
 
 import sys
 import os
-sys.path.append(os.path.join(os.path.dirname(__file__), "src"))
+sys.path.append(os.path.join(os.path.dirname(__file__), "../src"))
 
 import pandas as pd
 from paper_fetcher import PaperFetcher

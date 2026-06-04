@@ -3,7 +3,7 @@ Full pipeline runner: filter relevant papers, extract claims, detect contradicti
 All powered by DeepSeek API.
 """
 import sys
-sys.path.insert(0, "src")
+sys.path.insert(0, "../src")
 
 import pandas as pd
 import os
