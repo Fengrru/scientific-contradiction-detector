@@ -1,4 +1,4 @@
-# Scientific Contradiction Detection System
+<h1 align="center">Scientific Contradiction Detection System</h1>
 
 <p align="center">
   <img src="https://img.shields.io/badge/domain-CoT%20Math%20Reasoning-blue.svg"/>
