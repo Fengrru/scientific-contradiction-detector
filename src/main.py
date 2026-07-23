@@ -12,6 +12,10 @@ import os
 import yaml
 import logging
 from pathlib import Path
+from dotenv import load_dotenv
+
+# Load .env file before any config loading
+load_dotenv()
 
 # Add src to path
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))

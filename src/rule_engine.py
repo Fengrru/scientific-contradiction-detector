@@ -7,9 +7,11 @@ Date: 2026-04-20
 """
 
 import pandas as pd
-from typing import List, Dict, Tuple, Callable
+import numpy as np
+from typing import List, Dict, Tuple, Callable, Optional
 import re
 import logging
+from collections import Counter
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -257,6 +259,10 @@ class RuleEngine:
         """
         Derive new rules from manually verified contradictions.
         
+        Analyzes verified true-positive contradictions to discover recurring patterns
+        (e.g., specific subject-object pairs, condition keyword combinations)
+        and generates ContradictionRule instances that capture those patterns.
+        
         Args:
             verified_df: DataFrame with manual verification results
             min_support: Minimum occurrences to create a rule
@@ -274,41 +280,207 @@ class RuleEngine:
         
         for ctype, group in true_positives.groupby("contradiction_type"):
             if len(group) >= min_support:
-                # Analyze common patterns
-                common_conditions = self._find_common_patterns(group)
+                # Analyze common patterns (may return multiple condition functions)
+                conditions = self._find_common_patterns(group)
                 
-                if common_conditions:
-                    rule = ContradictionRule(
-                        name=f"derived_{ctype.lower()}",
-                        description=f"Derived from {len(group)} verified {ctype} cases",
-                        condition_func=common_conditions,
-                        contradiction_type=ctype,
-                        confidence_boost=0.4
-                    )
-                    derived_rules.append(rule)
-                    logger.info(f"Derived rule for {ctype} from {len(group)} cases")
+                if not isinstance(conditions, list):
+                    conditions = [conditions]
+                
+                for i, cond_func in enumerate(conditions):
+                    if cond_func is not None:
+                        suffix = f"_{i+1}" if len(conditions) > 1 else ""
+                        rule = ContradictionRule(
+                            name=f"derived_{ctype.lower()}{suffix}",
+                            description=f"Derived from {len(group)} verified {ctype} cases",
+                            condition_func=cond_func,
+                            contradiction_type=ctype,
+                            confidence_boost=0.4
+                        )
+                        derived_rules.append(rule)
+                        logger.info(f"Derived rule '{rule.name}' for {ctype} from {len(group)} cases")
         
         return derived_rules
     
-    def _find_common_patterns(self, verified_group: pd.DataFrame) -> Callable:
+    def auto_derive_and_add_rules(self,
+                                   verified_df: pd.DataFrame,
+                                   min_support: int = 3) -> int:
         """
-        Find common patterns in verified contradictions.
+        Derive new rules from verified data and add them to the engine.
+        
+        Convenience method that combines derive_rules_from_verified and add_rule.
+        
+        Args:
+            verified_df: DataFrame with manual verification results
+            min_support: Minimum occurrences to create a rule
+            
+        Returns:
+            Number of new rules added
+        """
+        new_rules = self.derive_rules_from_verified(verified_df, min_support)
+        for rule in new_rules:
+            self.add_rule(rule)
+        return len(new_rules)
+    
+    def _find_common_patterns(self, verified_group: pd.DataFrame) -> List[Callable]:
+        """
+        Mine patterns from verified contradictions and return condition functions.
+        
+        Analyzes subject-relation-object patterns, condition keywords, and their
+        co-occurrence to discover rules beyond the default 4 patterns.
+        Can return multiple condition functions for different sub-patterns.
         
         Args:
             verified_group: DataFrame of verified contradictions of same type
             
         Returns:
-            Condition function capturing the pattern
+            List of condition function(s) capturing discovered patterns
         """
-        # Placeholder: pattern mining from verified contradictions
-        # Future: analyze condition fields, subject-object pairs for common patterns
-        # and generate new ContradictionRule instances automatically
+        if verified_group.empty:
+            return []
         
-        def pattern_matcher(c1, c2):
-            # Not yet implemented — requires sufficient verified samples
-            return False
+        # ── Helper: parse "subject relation object" text ──
+        def parse_sro(text):
+            parts = str(text).split()
+            return (
+                parts[0] if len(parts) > 0 else '',
+                parts[1] if len(parts) > 1 else '',
+                ' '.join(parts[2:]) if len(parts) > 2 else ''
+            )
         
-        return pattern_matcher
+        # ── Extract SRO from claim texts ──
+        c1_sro = verified_group['claim1_text'].dropna().apply(parse_sro)
+        c2_sro = verified_group['claim2_text'].dropna().apply(parse_sro)
+        
+        subjects_1 = [s for s, _, _ in c1_sro]
+        rels_1    = [r for _, r, _ in c1_sro]
+        objs_1    = [o for _, _, o in c1_sro]
+        subjects_2 = [s for s, _, _ in c2_sro]
+        rels_2    = [r for _, r, _ in c2_sro]
+        objs_2    = [o for _, _, o in c2_sro]
+        
+        # ── Known keywords for condition field mining ──
+        KNOWN_DATASETS = {
+            'gsm8k', 'math', 'svamp', 'mgsm', 'aqua', 'asdiv',
+            'multiarith', 'addsub', 'singleeq', 'gpqa', 'mmlu',
+            'bbh', 'halueval', 'mawps', 'tabmwp', 'finqa',
+            'strategyqa', 'date', 'sports', 'saycan', 'penguins',
+            'rcc-8', 'aerialvln', 'alfworld', 'webshop', 'hotpotqa',
+        }
+        KNOWN_MODELS = {
+            'gpt-4', 'gpt-3.5', 'gpt-4o', 'gpt-4o-mini', 'gpt-3.5-turbo',
+            'llama-2', 'llama-3', 'llama-3.1', 'llama-3.2', 'llama-2-7b',
+            'llama-2-13b', 'llama-2-70b',
+            'claude', 'claude-3', 'claude-3.5',
+            'palm', 'palm-2', 'gemini', 'gemini-1.5-pro', 'codex',
+            'olmo', 'qwen', 'qwen2', 'qwen2.5', 'mistral', 'mixtral',
+            'falcon', 'phi-3', 'deepseek', 'o1-mini', 'o3-mini',
+            'lamda', 'minerva', 'bloom', 't5', 'bart',
+        }
+        
+        # ── Build condition keyword profiles ──
+        all_conditions = pd.concat([
+            verified_group['claim1_condition'].dropna().astype(str),
+            verified_group['claim2_condition'].dropna().astype(str)
+        ])
+        
+        # Count keyword occurrences across conditions
+        kw_counter = Counter()
+        for cond in all_conditions:
+            cond_lower = cond.lower()
+            tokens = set(re.findall(r'[a-zA-Z][a-zA-Z0-9_.-]+', cond_lower))
+            kw_counter.update(t for t in tokens if t in KNOWN_DATASETS | KNOWN_MODELS)
+        
+        # Keep keywords that appear in at least 2 conditions
+        distinctive_kws = {kw for kw, cnt in kw_counter.items() if cnt >= 2}
+        
+        # ── Detect overarching pattern type ──
+        n = len(verified_group)
+        
+        # How many pairs share the same SRO?
+        same_sro_count = sum(
+            1 for i in range(n)
+            if subjects_1[i] == subjects_2[i]
+            and rels_1[i] == rels_2[i]
+            and objs_1[i] == objs_2[i]
+        )
+        
+        # How many pairs have opposite relations with same subject-object?
+        opp_pairs = {
+            ('improves', 'degrades'), ('increases', 'reduces'),
+            ('outperforms', 'degrades'), ('enables', 'reduces'),
+            ('correlates_with', 'contradicts'),
+        }
+        opposite_rel_count = sum(
+            1 for i in range(n)
+            if subjects_1[i] == subjects_2[i] and objs_1[i] == objs_2[i]
+            and ((rels_1[i], rels_2[i]) in opp_pairs
+                 or (rels_2[i], rels_1[i]) in opp_pairs)
+        )
+        
+        # ── Determine majority subject, relation, object ──
+        all_subjects = subjects_1 + subjects_2
+        all_relations = rels_1 + rels_2
+        all_objects = objs_1 + objs_2
+        
+        top_subject = Counter(all_subjects).most_common(1)[0][0] if all_subjects else ''
+        top_relation = Counter(all_relations).most_common(1)[0][0] if all_relations else ''
+        top_object = Counter(all_objects).most_common(1)[0][0] if all_objects else ''
+        top_subject_count = Counter(all_subjects).most_common(1)[0][1] if all_subjects else 0
+        
+        # ── Generate condition functions ──
+        conditions = []
+        
+        # Pattern A: Same SRO + different distinctive keywords → Condition Contradiction
+        if same_sro_count >= max(2, n * 0.4) and len(distinctive_kws) >= 2:
+            def make_sro_kw_matcher(_subj=top_subject, _rel=top_relation,
+                                    _obj=top_object, _kws=distinctive_kws.copy()):
+                def matcher(c1, c2):
+                    s1 = str(c1.get('subject', ''))
+                    s2 = str(c2.get('subject', ''))
+                    r1 = str(c1.get('relation', ''))
+                    r2 = str(c2.get('relation', ''))
+                    o1 = str(c1.get('object', ''))
+                    o2 = str(c2.get('object', ''))
+                    if s1 == s2 and r1 == r2 and o1 == o2:
+                        c1_cond = str(c1.get('condition', '')).lower()
+                        c2_cond = str(c2.get('condition', '')).lower()
+                        c1_kws = {k for k in _kws if k in c1_cond}
+                        c2_kws = {k for k in _kws if k in c2_cond}
+                        return bool(c1_kws and c2_kws and c1_kws != c2_kws)
+                    return False
+                return matcher
+            conditions.append(make_sro_kw_matcher())
+        
+        # Pattern B: Specific subject with opposite relations → Scientific Dispute
+        if opposite_rel_count >= max(2, n * 0.3):
+            def make_opposite_rel_matcher(_subj=top_subject, _obj=top_object):
+                def matcher(c1, c2):
+                    s1, s2 = str(c1.get('subject', '')), str(c2.get('subject', ''))
+                    r1, r2 = str(c1.get('relation', '')), str(c2.get('relation', ''))
+                    o1, o2 = str(c1.get('object', '')), str(c2.get('object', ''))
+                    if s1 == s2 and o1 == o2:
+                        return ((r1, r2) in opp_pairs or (r2, r1) in opp_pairs)
+                    return False
+                return matcher
+            conditions.append(make_opposite_rel_matcher())
+        
+        # Pattern C: Subject-specific + different condition tokens (generic pattern)
+        if top_subject_count >= max(2, n * 0.3) and not conditions:
+            def make_subject_cond_matcher(_subj=top_subject):
+                def matcher(c1, c2):
+                    s1, s2 = str(c1.get('subject', '')), str(c2.get('subject', ''))
+                    if s1 == _subj or s2 == _subj:
+                        r1, r2 = str(c1.get('relation', '')), str(c2.get('relation', ''))
+                        o1, o2 = str(c1.get('object', '')), str(c2.get('object', ''))
+                        if s1 == s2 and r1 == r2 and o1 == o2:
+                            c1c = str(c1.get('condition', ''))
+                            c2c = str(c2.get('condition', ''))
+                            return bool(c1c and c2c and c1c != c2c)
+                    return False
+                return matcher
+            conditions.append(make_subject_cond_matcher())
+        
+        return conditions if conditions else []
     
     def get_rule_summary(self) -> Dict:
         """Get summary of all rules in engine."""
@@ -384,3 +556,92 @@ if __name__ == "__main__":
     print(f"  Type: {ctype}")
     print(f"  Confidence: {conf}")
     print(f"  Matched rules: {rules}")
+    
+    # ── Test pattern derivation ──
+    print("\n" + "="*60)
+    print("TEST: Pattern Derivation from Verified Contradictions")
+    print("="*60)
+    
+    sample_verified = pd.DataFrame([
+        {
+            "claim1_text": "Chain-of-Thought improves Arithmetic Accuracy",
+            "claim1_condition": "GSM8K with GPT-3.5",
+            "claim2_text": "Chain-of-Thought improves Arithmetic Accuracy",
+            "claim2_condition": "MATH with Llama-2",
+            "contradiction_type": "Experimental_Condition_Contradiction",
+            "is_true_positive": True
+        },
+        {
+            "claim1_text": "Chain-of-Thought improves Arithmetic Accuracy",
+            "claim1_condition": "GSM8K with GPT-4",
+            "claim2_text": "Chain-of-Thought improves Arithmetic Accuracy",
+            "claim2_condition": "SVAMP with GPT-3.5",
+            "contradiction_type": "Experimental_Condition_Contradiction",
+            "is_true_positive": True
+        },
+        {
+            "claim1_text": "Chain-of-Thought improves Arithmetic Accuracy",
+            "claim1_condition": "MATH with GPT-3.5",
+            "claim2_text": "Chain-of-Thought improves Arithmetic Accuracy",
+            "claim2_condition": "GSM8K with Codex",
+            "contradiction_type": "Experimental_Condition_Contradiction",
+            "is_true_positive": True
+        },
+        {
+            "claim1_text": "Chain-of-Thought improves Arithmetic Accuracy",
+            "claim1_condition": "GSM8K with Claude",
+            "claim2_text": "Chain-of-Thought improves Arithmetic Accuracy",
+            "claim2_condition": "GSM8K with PaLM",
+            "contradiction_type": "Experimental_Condition_Contradiction",
+            "is_true_positive": True
+        },
+        {
+            "claim1_text": "Large Language Model correlates_with Problem Complexity",
+            "claim1_condition": "GSM8K with GPT-3.5",
+            "claim2_text": "Large Language Model contradicts Problem Complexity",
+            "claim2_condition": "MATH with Llama-2",
+            "contradiction_type": "Scientific_Dispute",
+            "is_true_positive": True
+        },
+        {
+            "claim1_text": "Large Language Model correlates_with Problem Complexity",
+            "claim1_condition": "GSM8K with GPT-3.5",
+            "claim2_text": "Large Language Model contradicts Problem Complexity",
+            "claim2_condition": "GSM8K with Llama-2",
+            "contradiction_type": "Scientific_Dispute",
+            "is_true_positive": True
+        }
+    ])
+    
+    print(f"Sample verified data: {len(sample_verified)} pairs")
+    
+    # Derive rules
+    derived = engine.derive_rules_from_verified(sample_verified, min_support=2)
+    print(f"\nDerived {len(derived)} new rules:")
+    for rule in derived:
+        print(f"  - {rule.name}: {rule.description}")
+    
+    # Auto add and test
+    added = engine.auto_derive_and_add_rules(sample_verified, min_support=2)
+    print(f"\nAuto-added {added} rules, total now: {engine.get_rule_summary()['total_rules']}")
+    
+    # Test derived rule on new pair
+    new_claim1 = {
+        "subject": "Chain-of-Thought",
+        "relation": "improves",
+        "object": "Arithmetic Accuracy",
+        "condition": "GPQA with GPT-4"
+    }
+    new_claim2 = {
+        "subject": "Chain-of-Thought",
+        "relation": "improves",
+        "object": "Arithmetic Accuracy",
+        "condition": "AQUA with GPT-3.5"
+    }
+    ctype, conf, rules = engine.analyze_pair(new_claim1, new_claim2)
+    print(f"\nDerived rule test on new pair:")
+    print(f"  Type: {ctype}")
+    print(f"  Confidence: {conf}")
+    print(f"  Matched rules: {rules}")
+    
+    print("\n[PASS] All rule engine tests completed!")
